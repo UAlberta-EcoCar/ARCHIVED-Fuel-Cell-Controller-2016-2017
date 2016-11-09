@@ -200,49 +200,11 @@ DIN A3, landscape with location and doc. field</description>
 <text x="-2.54" y="2.54" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="+5V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
-<symbol name="VIN">
-<wire x1="-1.016" y1="0" x2="1.016" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.016" y1="0" x2="0" y2="1.778" width="0.254" layer="94"/>
-<wire x1="0" y1="1.778" x2="1.016" y2="0" width="0.254" layer="94"/>
-<text x="-2.032" y="2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="VIN" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-</symbol>
-<symbol name="3V3">
-<wire x1="-1.016" y1="0" x2="1.016" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.016" y1="0" x2="0" y2="1.651" width="0.254" layer="94"/>
-<wire x1="0" y1="1.651" x2="1.016" y2="0" width="0.254" layer="94"/>
-<text x="-2.286" y="2.286" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="3V3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="+5V">
 <gates>
 <gate name="G$1" symbol="+5V" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="VIN">
-<gates>
-<gate name="G$1" symbol="VIN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="3V3">
-<gates>
-<gate name="G$1" symbol="3V3" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -7293,8 +7255,6 @@ grid 2.54 mm</description>
 <parts>
 <part name="FRAME1" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="U$6" library="MyPOW" deviceset="+5V" device=""/>
-<part name="U$7" library="MyPOW" deviceset="VIN" device=""/>
-<part name="U$8" library="MyPOW" deviceset="3V3" device=""/>
 <part name="SUPPLY13" library="supply2" deviceset="GND" device=""/>
 <part name="J5" library="SmartPrj" deviceset="HEAD17-NOSS" device=""/>
 <part name="J6" library="SmartPrj" deviceset="HEAD17-NOSS-1" device=""/>
@@ -7374,8 +7334,6 @@ grid 2.54 mm</description>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="U$6" gate="G$1" x="106.68" y="236.22"/>
-<instance part="U$7" gate="G$1" x="99.06" y="236.22"/>
-<instance part="U$8" gate="G$1" x="114.3" y="236.22"/>
 <instance part="SUPPLY13" gate="GND" x="104.14" y="213.36"/>
 <instance part="J5" gate="G$1" x="50.8" y="213.36" rot="MR0"/>
 <instance part="J6" gate="G$1" x="76.2" y="213.36"/>
@@ -7599,24 +7557,6 @@ grid 2.54 mm</description>
 <label x="327.66" y="220.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VIN" class="0">
-<segment>
-<wire x1="99.06" y1="226.06" x2="99.06" y2="233.68" width="0.1524" layer="91"/>
-<pinref part="U$7" gate="G$1" pin="VIN"/>
-<pinref part="J6" gate="G$1" pin="3"/>
-<wire x1="99.06" y1="226.06" x2="88.9" y2="226.06" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="226.06" x2="86.36" y2="226.06" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="3V3" class="0">
-<segment>
-<wire x1="114.3" y1="193.04" x2="114.3" y2="233.68" width="0.1524" layer="91"/>
-<pinref part="U$8" gate="G$1" pin="3V3"/>
-<pinref part="J6" gate="G$1" pin="16"/>
-<wire x1="114.3" y1="193.04" x2="91.44" y2="193.04" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="193.04" x2="86.36" y2="193.04" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="12V" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
@@ -7696,7 +7636,7 @@ grid 2.54 mm</description>
 <pinref part="D2" gate="1" pin="C"/>
 <wire x1="109.22" y1="147.32" x2="101.6" y2="147.32" width="0.1524" layer="91"/>
 <junction x="109.22" y="147.32"/>
-<label x="129.54" y="147.32" size="1.778" layer="95"/>
+<label x="132.08" y="147.32" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="ETH2" gate="G$1" pin="2"/>
