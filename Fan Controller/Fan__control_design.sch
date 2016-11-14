@@ -7242,6 +7242,112 @@ grid 2.54 mm</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="polyfuse">
+<packages>
+<package name="1206">
+<wire x1="-2.4003" y1="1.1049" x2="2.4003" y2="1.1049" width="0.0508" layer="39"/>
+<wire x1="2.4003" y1="-1.1049" x2="-2.4003" y2="-1.1049" width="0.0508" layer="39"/>
+<wire x1="-2.4003" y1="-1.1049" x2="-2.4003" y2="1.1049" width="0.0508" layer="39"/>
+<wire x1="2.4003" y1="1.1049" x2="2.4003" y2="-1.1049" width="0.0508" layer="39"/>
+<wire x1="-0.965" y1="0.787" x2="0.965" y2="0.787" width="0.1016" layer="51"/>
+<wire x1="-0.965" y1="-0.787" x2="0.965" y2="-0.787" width="0.1016" layer="51"/>
+<smd name="1" x="-1.4" y="0" dx="1.6" dy="1.8" layer="1"/>
+<smd name="2" x="1.4" y="0" dx="1.6" dy="1.8" layer="1"/>
+<text x="-1.27" y="1.143" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.397" y="-1.524" size="0.4064" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.7018" y1="-0.8509" x2="-0.9517" y2="0.8491" layer="51"/>
+<rectangle x1="0.9517" y1="-0.8491" x2="1.7018" y2="0.8509" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+</package>
+</packages>
+<symbols>
+<symbol name="POLYFUSE">
+<text x="-3.81" y="1.4986" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<wire x1="2.54" y1="0" x2="0" y2="0" width="0.254" layer="94" curve="-180"/>
+<wire x1="-2.54" y1="0" x2="0" y2="0" width="0.254" layer="94" curve="-180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="POLYFUSE" prefix="F" uservalue="yes">
+<description>&lt;b&gt;Resistor&lt;/b&gt;
+Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</description>
+<gates>
+<gate name="G$1" symbol="POLYFUSE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1206">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="SparkFun-Electromechanical">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find anything that moves- switches, relays, buttons, potentiometers. Also, anything that goes on a board but isn't electrical in nature- screws, standoffs, etc.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="STAND-OFF">
+<description>&lt;b&gt;Stand Off&lt;/b&gt;&lt;p&gt;
+This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="-180"/>
+<circle x="0" y="0" radius="2.794" width="0.127" layer="39"/>
+<hole x="0" y="0" drill="3.302"/>
+</package>
+<package name="STAND-OFF-TIGHT">
+<description>&lt;b&gt;Stand Off&lt;/b&gt;&lt;p&gt;
+This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="-180"/>
+<circle x="0" y="0" radius="2.794" width="0.127" layer="39"/>
+<hole x="0" y="0" drill="3.048"/>
+</package>
+</packages>
+<symbols>
+<symbol name="STAND-OFF">
+<circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="STAND-OFF" prefix="STANDOFF">
+<description>&lt;b&gt;#4 Stand Off&lt;/b&gt;&lt;p&gt;
+This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<gates>
+<gate name="G$1" symbol="STAND-OFF" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="STAND-OFF">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="TIGHT" package="STAND-OFF-TIGHT">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7309,6 +7415,12 @@ grid 2.54 mm</description>
 <part name="C2" library="adafruit" deviceset="C-US" device="C0603K"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
+<part name="F1" library="polyfuse" deviceset="POLYFUSE" device=""/>
+<part name="F2" library="polyfuse" deviceset="POLYFUSE" device=""/>
+<part name="STANDOFF1" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
+<part name="STANDOFF2" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
+<part name="STANDOFF3" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
+<part name="STANDOFF4" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7388,6 +7500,12 @@ grid 2.54 mm</description>
 <instance part="C2" gate="G$1" x="213.36" y="137.16"/>
 <instance part="GND15" gate="1" x="172.72" y="127"/>
 <instance part="GND16" gate="1" x="213.36" y="127"/>
+<instance part="F1" gate="G$1" x="320.04" y="220.98"/>
+<instance part="F2" gate="G$1" x="320.04" y="213.36"/>
+<instance part="STANDOFF1" gate="G$1" x="190.5" y="243.84"/>
+<instance part="STANDOFF2" gate="G$1" x="195.58" y="243.84"/>
+<instance part="STANDOFF3" gate="G$1" x="200.66" y="243.84"/>
+<instance part="STANDOFF4" gate="G$1" x="205.74" y="243.84"/>
 </instances>
 <busses>
 </busses>
@@ -7547,14 +7665,9 @@ grid 2.54 mm</description>
 <pinref part="R17" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="JP2" gate="G$1" pin="1"/>
-<wire x1="337.82" y1="223.52" x2="327.66" y2="223.52" width="0.1524" layer="91"/>
-<label x="327.66" y="223.52" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP2" gate="G$1" pin="2"/>
-<wire x1="337.82" y1="220.98" x2="327.66" y2="220.98" width="0.1524" layer="91"/>
-<label x="327.66" y="220.98" size="1.778" layer="95"/>
+<pinref part="F1" gate="G$1" pin="1"/>
+<wire x1="314.96" y1="220.98" x2="309.88" y2="220.98" width="0.1524" layer="91"/>
+<label x="309.88" y="220.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="12V" class="0">
@@ -7614,19 +7727,9 @@ grid 2.54 mm</description>
 <label x="355.6" y="88.9" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP2" gate="G$1" pin="4"/>
-<wire x1="337.82" y1="215.9" x2="327.66" y2="215.9" width="0.1524" layer="91"/>
-<label x="327.66" y="215.9" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP2" gate="G$1" pin="5"/>
-<wire x1="337.82" y1="213.36" x2="327.66" y2="213.36" width="0.1524" layer="91"/>
-<label x="327.66" y="213.36" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="JP2" gate="G$1" pin="6"/>
-<wire x1="337.82" y1="210.82" x2="327.66" y2="210.82" width="0.1524" layer="91"/>
-<label x="327.66" y="210.82" size="1.778" layer="95"/>
+<pinref part="F2" gate="G$1" pin="1"/>
+<wire x1="314.96" y1="213.36" x2="309.88" y2="213.36" width="0.1524" layer="91"/>
+<label x="309.88" y="213.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PWM_1" class="0">
@@ -7660,9 +7763,9 @@ grid 2.54 mm</description>
 <label x="40.64" y="144.78" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="J5" gate="G$1" pin="14"/>
-<wire x1="40.64" y1="198.12" x2="25.4" y2="198.12" width="0.1524" layer="91"/>
-<label x="25.4" y="198.12" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="9"/>
+<wire x1="40.64" y1="210.82" x2="25.4" y2="210.82" width="0.1524" layer="91"/>
+<label x="25.4" y="210.82" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PWR_1" class="0">
@@ -7724,9 +7827,10 @@ grid 2.54 mm</description>
 <label x="40.64" y="60.96" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="J5" gate="G$1" pin="15"/>
-<wire x1="40.64" y1="195.58" x2="25.4" y2="195.58" width="0.1524" layer="91"/>
-<label x="25.4" y="195.58" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="13"/>
+<wire x1="40.64" y1="200.66" x2="25.4" y2="200.66" width="0.1524" layer="91"/>
+<label x="25.4" y="200.66" size="1.778" layer="95"/>
+<label x="25.4" y="200.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PWM_2" class="0">
@@ -7776,12 +7880,22 @@ grid 2.54 mm</description>
 <wire x1="76.2" y1="38.1" x2="71.12" y2="38.1" width="0.1524" layer="91"/>
 <label x="71.12" y="38.1" size="1.778" layer="95" rot="R180"/>
 </segment>
+<segment>
+<pinref part="J5" gate="G$1" pin="17"/>
+<wire x1="40.64" y1="190.5" x2="25.4" y2="190.5" width="0.1524" layer="91"/>
+<label x="25.4" y="190.5" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="MOS_1" class="0">
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="78.74" y1="116.84" x2="73.66" y2="116.84" width="0.1524" layer="91"/>
 <label x="68.58" y="116.84" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J5" gate="G$1" pin="15"/>
+<wire x1="40.64" y1="195.58" x2="25.4" y2="195.58" width="0.1524" layer="91"/>
+<label x="25.4" y="195.58" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PWR_2" class="0">
@@ -7816,9 +7930,9 @@ grid 2.54 mm</description>
 <label x="353.06" y="86.36" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J5" gate="G$1" pin="17"/>
-<wire x1="40.64" y1="190.5" x2="25.4" y2="190.5" width="0.1524" layer="91"/>
-<label x="25.4" y="190.5" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="16"/>
+<wire x1="40.64" y1="193.04" x2="25.4" y2="193.04" width="0.1524" layer="91"/>
+<label x="25.4" y="193.04" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="TACH_3" class="0">
@@ -7832,9 +7946,9 @@ grid 2.54 mm</description>
 <label x="190.5" y="81.28" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="J5" gate="G$1" pin="16"/>
-<wire x1="40.64" y1="193.04" x2="25.4" y2="193.04" width="0.1524" layer="91"/>
-<label x="25.4" y="193.04" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="14"/>
+<wire x1="40.64" y1="198.12" x2="25.4" y2="198.12" width="0.1524" layer="91"/>
+<label x="25.4" y="198.12" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -7886,6 +8000,11 @@ grid 2.54 mm</description>
 <pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="218.44" y1="48.26" x2="210.82" y2="48.26" width="0.1524" layer="91"/>
 <label x="210.82" y="48.26" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J6" gate="G$1" pin="17"/>
+<wire x1="86.36" y1="190.5" x2="91.44" y2="190.5" width="0.1524" layer="91"/>
+<label x="88.9" y="190.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -7948,6 +8067,34 @@ grid 2.54 mm</description>
 <pinref part="ETH1" gate="G$1" pin="7"/>
 <wire x1="360.68" y1="73.66" x2="355.6" y2="73.66" width="0.1524" layer="91"/>
 <label x="350.52" y="73.66" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="JP2" gate="G$1" pin="2"/>
+<pinref part="F1" gate="G$1" pin="2"/>
+<wire x1="337.82" y1="220.98" x2="327.66" y2="220.98" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="G$1" pin="3"/>
+<wire x1="327.66" y1="220.98" x2="325.12" y2="220.98" width="0.1524" layer="91"/>
+<wire x1="337.82" y1="218.44" x2="327.66" y2="218.44" width="0.1524" layer="91"/>
+<wire x1="327.66" y1="218.44" x2="327.66" y2="220.98" width="0.1524" layer="91"/>
+<junction x="327.66" y="220.98"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="JP2" gate="G$1" pin="5"/>
+<pinref part="F2" gate="G$1" pin="2"/>
+<wire x1="337.82" y1="213.36" x2="330.2" y2="213.36" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="G$1" pin="6"/>
+<wire x1="330.2" y1="213.36" x2="325.12" y2="213.36" width="0.1524" layer="91"/>
+<wire x1="337.82" y1="210.82" x2="330.2" y2="210.82" width="0.1524" layer="91"/>
+<wire x1="330.2" y1="210.82" x2="330.2" y2="213.36" width="0.1524" layer="91"/>
+<junction x="330.2" y="213.36"/>
+<pinref part="JP2" gate="G$1" pin="7"/>
+<wire x1="337.82" y1="208.28" x2="330.2" y2="208.28" width="0.1524" layer="91"/>
+<wire x1="330.2" y1="208.28" x2="330.2" y2="210.82" width="0.1524" layer="91"/>
+<junction x="330.2" y="210.82"/>
 </segment>
 </net>
 </nets>
