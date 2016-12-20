@@ -1,0 +1,27 @@
+Power Board Redesign Notes
+
+
+Specifications:
+X-lower input cutoff to 20V
+X-increase high voltage rail to 13V to compensate for IR drop
+X-correct diode packages
+X-correct SOT23 packages
+X-input switch, hardware or software activated
+-mounting screw holes
+X-fix soft start issues with a 1.5MOhm parallel resistor
+X-status LEDs
+X-increase 48V input capacitance
+X-smaller inductor
+X-new package for output capacitors
+X-smaller p-mosfet
+-right angle connector to new AVR Board
+
+
+New components:
+Toggle switch - C&K GT12MSCBE - CKN9050CT-ND
+Signal diode - Comchip CDSF4148 - 641-1004-1-ND
+Signal BJT (npn) - Diodes Inc. ZXTN19100CFFTA - ZXTN19100CFFCT-ND
+Input 2.2uF capacitors - Samsung CL32B225KCJSNNE - 1276-3362-1-ND
+Output 12V capacitors - Panasonic EEE-1EA331UP - PCE3906CT-ND
+P-mos - Vishay SIA483DJ-T1-GE3 - SIA483DJ-T1-GE3CT-ND
+
