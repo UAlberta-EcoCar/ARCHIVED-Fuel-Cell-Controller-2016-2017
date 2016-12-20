@@ -345,6 +345,40 @@ chip</description>
 </package>
 </packages>
 </library>
+<library name="rs232-to-can">
+<packages>
+<package name="RS232-TO-CAN-CONVERTER">
+<wire x1="0" y1="0" x2="50" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="0" y2="50" width="0.127" layer="21"/>
+<wire x1="0" y1="50" x2="50" y2="50" width="0.127" layer="21"/>
+<wire x1="50" y1="0" x2="50" y2="50" width="0.127" layer="21"/>
+<pad name="GND" x="46.863" y="3.3655" drill="0.8"/>
+<pad name="CTS" x="46.863" y="5.9055" drill="0.8"/>
+<pad name="VCC" x="46.863" y="8.4455" drill="0.8"/>
+<pad name="RXI" x="46.863" y="10.9855" drill="0.8"/>
+<pad name="TX0" x="46.863" y="13.5255" drill="0.8"/>
+<pad name="VIN" x="47.498" y="24.9555" drill="0.8"/>
+<pad name="5V" x="47.498" y="27.4955" drill="0.8"/>
+<pad name="SDA" x="47.498" y="30.0355" drill="0.8"/>
+<pad name="SCL" x="47.498" y="32.5755" drill="0.8"/>
+<pad name="GND_" x="47.498" y="35.1155" drill="0.8"/>
+<pad name="DTR" x="46.863" y="16.0655" drill="0.8"/>
+<text x="41.91" y="2.54" size="1.27" layer="21">GND</text>
+<text x="41.91" y="5.08" size="1.27" layer="21">CTS</text>
+<text x="41.91" y="7.62" size="1.27" layer="21">VCC</text>
+<text x="41.91" y="10.16" size="1.27" layer="21">RXI</text>
+<text x="41.91" y="12.7" size="1.27" layer="21">TX0</text>
+<text x="41.91" y="15.24" size="1.27" layer="21">DTR</text>
+<text x="41.91" y="24.13" size="1.27" layer="21">VIN</text>
+<text x="41.91" y="26.67" size="1.27" layer="21">5V</text>
+<text x="41.91" y="29.21" size="1.27" layer="21">SDA</text>
+<text x="41.91" y="31.75" size="1.27" layer="21">SCL</text>
+<text x="41.91" y="34.29" size="1.27" layer="21">GND</text>
+<text x="16.51" y="12.7" size="1.27" layer="21" rot="R90">RS232-TO-CAN-CONVERTER</text>
+<text x="20.32" y="12.7" size="1.27" layer="21" rot="R90">Double Check This Pinout</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -542,9 +576,18 @@ design rules under a new name.</description>
 <element name="U$2" library="openlog" package="OPENLOG" value="OPENLOG" x="29.21" y="11.43" rot="R90"/>
 <element name="U$3" library="SHT31Breakout" package="SHT31-BREAKOUT" value="SHT31-BREAKOUT" x="74.93" y="40.64"/>
 <element name="U$4" library="DS3231" package="DS3231" value="DS3231" x="73.66" y="57.15"/>
-<element name="H2BOARD" library="ETHERNET" package="A122645-ND" value="ETHERNET" x="57.15" y="63.5"/>
+<element name="H2BOARD" library="ETHERNET" package="A122645-ND" value="ETHERNET" x="57.15" y="76.2" rot="R180"/>
 <element name="R1" library="adafruit" package="R0603" value="10k" x="76.2" y="21.59"/>
-<element name="H2BOARD1" library="ETHERNET" package="A122645-ND" value="ETHERNET" x="78.74" y="6.35"/>
+<element name="RELAY1" library="ETHERNET" package="A122645-ND" value="ETHERNET" x="33.02" y="76.2" rot="R180"/>
+<element name="RELAY2" library="ETHERNET" package="A122645-ND" value="ETHERNET" x="11.43" y="76.2" rot="R180"/>
+<element name="CVM" library="ETHERNET" package="A122645-ND" value="ETHERNET" x="3.81" y="50.8" rot="R270"/>
+<element name="POWERBOARD" library="ETHERNET" package="A122645-ND" value="ETHERNET" x="3.81" y="27.94" rot="R270"/>
+<element name="U$5" library="rs232-to-can" package="RS232-TO-CAN-CONVERTER" value="RS232-TO-CAN-CONVERTER" x="-13.97" y="-125.73"/>
+<element name="PRESSURE" library="ETHERNET" package="A122645-ND" value="ETHERNET" x="12.7" y="3.81"/>
+<element name="FRAME2" library="SparkFun-Aesthetics" package="DUMMY" value="FRAME-LETTERNO_PACKAGE" x="-13.97" y="-129.54">
+<attribute name="VERSION" value="v01" x="-13.97" y="-129.54" size="1.778" layer="27" display="off"/>
+<attribute name="DESIGNER" value="Nobody" x="-13.97" y="-129.54" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="VBAT">
@@ -592,23 +635,51 @@ design rules under a new name.</description>
 <contactref element="H2BOARD" pad="P$13"/>
 <contactref element="H2BOARD" pad="P$14"/>
 <contactref element="R1" pad="1"/>
-<contactref element="H2BOARD1" pad="P$7"/>
-<contactref element="H2BOARD1" pad="P$8"/>
-<contactref element="H2BOARD1" pad="P$13"/>
-<contactref element="H2BOARD1" pad="P$14"/>
-<wire x1="65.28" y1="66.93" x2="78.74" y2="59.69" width="0" layer="19" extent="1-1"/>
-<wire x1="56.65" y1="66.04" x2="65.28" y2="66.93" width="0" layer="19" extent="1-1"/>
-<wire x1="49.02" y1="66.93" x2="56.65" y2="66.04" width="0" layer="19" extent="1-1"/>
+<contactref element="RELAY1" pad="P$7"/>
+<contactref element="RELAY1" pad="P$8"/>
+<contactref element="RELAY1" pad="P$13"/>
+<contactref element="RELAY1" pad="P$14"/>
+<contactref element="RELAY2" pad="P$14"/>
+<contactref element="RELAY2" pad="P$13"/>
+<contactref element="RELAY2" pad="P$7"/>
+<contactref element="RELAY2" pad="P$8"/>
+<contactref element="CVM" pad="P$13"/>
+<contactref element="CVM" pad="P$14"/>
+<contactref element="POWERBOARD" pad="P$13"/>
+<contactref element="POWERBOARD" pad="P$14"/>
+<contactref element="POWERBOARD" pad="P$5"/>
+<contactref element="POWERBOARD" pad="P$6"/>
+<contactref element="POWERBOARD" pad="P$7"/>
+<contactref element="U$5" pad="GND"/>
+<contactref element="U$5" pad="GND_"/>
+<contactref element="PRESSURE" pad="P$2"/>
 <wire x1="78.74" y1="43.18" x2="78.74" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="65.28" y1="72.77" x2="78.74" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="57.65" y1="73.66" x2="65.28" y2="72.77" width="0" layer="19" extent="1-1"/>
+<wire x1="49.02" y1="72.77" x2="57.65" y2="73.66" width="0" layer="19" extent="1-1"/>
+<wire x1="41.15" y1="72.77" x2="49.02" y2="72.77" width="0" layer="19" extent="1-1"/>
+<wire x1="36.58" y1="71.88" x2="41.15" y2="72.77" width="0" layer="19" extent="1-1"/>
+<wire x1="35.56" y1="73.66" x2="36.58" y2="71.88" width="0" layer="19" extent="1-1"/>
+<wire x1="24.89" y1="72.77" x2="35.56" y2="73.66" width="0" layer="19" extent="1-1"/>
+<wire x1="19.56" y1="72.77" x2="24.89" y2="72.77" width="0" layer="19" extent="1-1"/>
+<wire x1="14.99" y1="71.88" x2="19.56" y2="72.77" width="0" layer="19" extent="1-1"/>
+<wire x1="13.97" y1="73.66" x2="14.99" y2="71.88" width="0" layer="19" extent="1-1"/>
+<wire x1="3.3" y1="72.77" x2="13.97" y2="73.66" width="0" layer="19" extent="1-1"/>
+<wire x1="7.24" y1="58.93" x2="3.3" y2="72.77" width="0" layer="19" extent="1-1"/>
+<wire x1="7.24" y1="42.67" x2="7.24" y2="58.93" width="0" layer="19" extent="1-1"/>
+<wire x1="7.24" y1="36.07" x2="7.24" y2="42.67" width="0" layer="19" extent="1-1"/>
+<wire x1="6.35" y1="30.48" x2="7.24" y2="36.07" width="0" layer="19" extent="1-1"/>
+<wire x1="6.35" y1="28.44" x2="6.35" y2="30.48" width="0" layer="19" extent="1-1"/>
+<wire x1="8.13" y1="29.46" x2="6.35" y2="30.48" width="0" layer="19" extent="1-1"/>
+<wire x1="7.24" y1="19.81" x2="6.35" y2="28.44" width="0" layer="19" extent="1-1"/>
+<wire x1="15.26" y1="8.13" x2="7.24" y2="19.81" width="0" layer="19" extent="1-1"/>
 <wire x1="75.35" y1="21.59" x2="78.74" y2="43.18" width="0" layer="19" extent="1-1"/>
-<wire x1="75.18" y1="10.67" x2="75.35" y2="21.59" width="0" layer="19" extent="1-1"/>
-<wire x1="76.2" y1="8.89" x2="75.18" y2="10.67" width="0" layer="19" extent="1-1"/>
-<wire x1="70.61" y1="9.78" x2="75.18" y2="10.67" width="0" layer="19" extent="1-1"/>
-<wire x1="86.87" y1="9.78" x2="76.2" y2="8.89" width="0" layer="19" extent="1-1"/>
-<wire x1="52.07" y1="3.81" x2="70.61" y2="9.78" width="0" layer="19" extent="1-1"/>
-<wire x1="37.465" y1="15.24" x2="52.07" y2="3.81" width="0" layer="19" extent="1-1"/>
+<wire x1="37.465" y1="15.24" x2="15.26" y2="8.13" width="0" layer="19" extent="1-1"/>
 <wire x1="37.465" y1="17.78" x2="37.465" y2="15.24" width="0" layer="19" extent="1-1"/>
+<wire x1="52.07" y1="3.81" x2="37.465" y2="15.24" width="0" layer="19" extent="1-1"/>
 <wire x1="44.45" y1="36.83" x2="37.465" y2="17.78" width="0" layer="19" extent="1-1"/>
+<wire x1="33.528" y1="-90.6145" x2="52.07" y2="3.81" width="0" layer="19" extent="1-1"/>
+<wire x1="32.893" y1="-122.3645" x2="33.528" y2="-90.6145" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="AREF">
 <contactref element="U$1" pad="AREF"/>
@@ -616,20 +687,15 @@ design rules under a new name.</description>
 <signal name="AGND">
 <contactref element="U$1" pad="AGND"/>
 </signal>
-<signal name="MOSI">
-<contactref element="U$1" pad="11"/>
-</signal>
-<signal name="MISO">
-<contactref element="U$1" pad="12"/>
-</signal>
-<signal name="SCK">
-<contactref element="U$1" pad="13"/>
-</signal>
 <signal name="RX1">
 <contactref element="U$1" pad="0"/>
+<contactref element="U$5" pad="TX0"/>
+<wire x1="44.45" y1="34.29" x2="32.893" y2="-112.2045" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="TX1">
 <contactref element="U$1" pad="1"/>
+<contactref element="U$5" pad="RXI"/>
+<wire x1="44.45" y1="31.75" x2="32.893" y2="-114.7445" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RX3">
 <contactref element="U$1" pad="7"/>
@@ -645,7 +711,7 @@ design rules under a new name.</description>
 <contactref element="H2BOARD" pad="P$1"/>
 <contactref element="U$1" pad="2"/>
 <contactref element="R1" pad="2"/>
-<wire x1="44.45" y1="29.21" x2="60.73" y2="66.04" width="0" layer="19" extent="1-1"/>
+<wire x1="44.45" y1="29.21" x2="53.57" y2="73.66" width="0" layer="19" extent="1-1"/>
 <wire x1="77.05" y1="21.59" x2="44.45" y2="29.21" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="EXTRA_SIG">
@@ -653,34 +719,115 @@ design rules under a new name.</description>
 </signal>
 <signal name="5V">
 <contactref element="H2BOARD" pad="P$8"/>
-<contactref element="H2BOARD1" pad="P$5"/>
-<wire x1="78.24" y1="8.89" x2="53.59" y2="67.82" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="12V_AUX">
-<contactref element="H2BOARD" pad="P$6"/>
+<contactref element="RELAY2" pad="P$5"/>
+<contactref element="POWERBOARD" pad="P$4"/>
+<contactref element="U$5" pad="5V"/>
+<contactref element="U$5" pad="VCC"/>
+<wire x1="11.93" y1="73.66" x2="60.71" y2="71.88" width="0" layer="19" extent="1-1"/>
+<wire x1="8.13" y1="27.42" x2="11.93" y2="73.66" width="0" layer="19" extent="1-1"/>
+<wire x1="33.528" y1="-98.2345" x2="8.13" y2="27.42" width="0" layer="19" extent="1-1"/>
+<wire x1="32.893" y1="-117.2845" x2="33.528" y2="-98.2345" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CAPCURR">
-<contactref element="H2BOARD1" pad="P$1"/>
 <contactref element="U$1" pad="17/A3"/>
-<wire x1="59.69" y1="13.97" x2="82.32" y2="8.89" width="0" layer="19" extent="1-1"/>
+<contactref element="RELAY2" pad="P$1"/>
+<wire x1="59.69" y1="13.97" x2="7.85" y2="73.66" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FCCURR">
-<contactref element="H2BOARD1" pad="P$2"/>
 <contactref element="U$1" pad="15/A1"/>
-<wire x1="59.69" y1="8.89" x2="81.3" y2="10.67" width="0" layer="19" extent="1-1"/>
+<contactref element="RELAY2" pad="P$2"/>
+<wire x1="59.69" y1="8.89" x2="8.87" y2="71.88" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CAPVOLT">
-<contactref element="H2BOARD1" pad="P$3"/>
 <contactref element="U$1" pad="14/A0"/>
-<wire x1="59.69" y1="6.35" x2="80.28" y2="8.89" width="0" layer="19" extent="1-1"/>
+<contactref element="RELAY2" pad="P$3"/>
+<wire x1="59.69" y1="6.35" x2="9.89" y2="73.66" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FCVOLT">
-<contactref element="H2BOARD1" pad="P$4"/>
 <contactref element="U$1" pad="16/A2"/>
-<wire x1="59.69" y1="11.43" x2="79.26" y2="10.67" width="0" layer="19" extent="1-1"/>
+<contactref element="RELAY2" pad="P$4"/>
+<wire x1="59.69" y1="11.43" x2="10.91" y2="71.88" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="FC_R">
-<contactref element="H2BOARD1" pad="P$6"/>
+<signal name="START_R">
+<contactref element="RELAY1" pad="P$1"/>
+<contactref element="U$1" pad="21/A7"/>
+<wire x1="59.69" y1="24.13" x2="29.44" y2="73.66" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="MOTOR_R">
+<contactref element="RELAY1" pad="P$2"/>
+<contactref element="U$1" pad="22/A8"/>
+<wire x1="59.69" y1="26.67" x2="30.46" y2="71.88" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="CAP_R">
+<contactref element="RELAY1" pad="P$3"/>
+<contactref element="U$1" pad="11"/>
+<wire x1="44.45" y1="6.35" x2="31.48" y2="73.66" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="CHARGE_R">
+<contactref element="RELAY1" pad="P$4"/>
+<contactref element="U$1" pad="12"/>
+<wire x1="44.45" y1="3.81" x2="32.5" y2="71.88" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="AUX12">
+<contactref element="RELAY1" pad="P$5"/>
+<contactref element="POWERBOARD" pad="P$3"/>
+<contactref element="H2BOARD" pad="P$6"/>
+<wire x1="33.52" y1="73.66" x2="58.67" y2="71.88" width="0" layer="19" extent="1-1"/>
+<wire x1="6.35" y1="26.4" x2="33.52" y2="73.66" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="FC12">
+<contactref element="RELAY1" pad="P$6"/>
+<contactref element="POWERBOARD" pad="P$1"/>
+<contactref element="POWERBOARD" pad="P$2"/>
+<contactref element="PRESSURE" pad="P$1"/>
+<wire x1="6.35" y1="24.36" x2="16.28" y2="6.35" width="0" layer="19" extent="1-1"/>
+<wire x1="8.13" y1="25.38" x2="6.35" y2="24.36" width="0" layer="19" extent="1-1"/>
+<wire x1="34.54" y1="71.88" x2="8.13" y2="25.38" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="FCC_R">
+<contactref element="RELAY2" pad="P$6"/>
+<contactref element="U$1" pad="20/A6"/>
+<contactref element="POWERBOARD" pad="P$8"/>
+<wire x1="8.13" y1="31.5" x2="12.95" y2="71.88" width="0" layer="19" extent="1-1"/>
+<wire x1="59.69" y1="21.59" x2="8.13" y2="31.5" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="SUPPLY_V">
+<contactref element="U$1" pad="6"/>
+</signal>
+<signal name="PURGE_V">
+<contactref element="U$1" pad="9"/>
+</signal>
+<signal name="EXTRA_V">
+<contactref element="U$1" pad="10"/>
+</signal>
+<signal name="N$1">
+<contactref element="CVM" pad="P$1"/>
+</signal>
+<signal name="N$2">
+<contactref element="CVM" pad="P$2"/>
+</signal>
+<signal name="N$3">
+<contactref element="CVM" pad="P$3"/>
+</signal>
+<signal name="N$4">
+<contactref element="CVM" pad="P$4"/>
+</signal>
+<signal name="N$5">
+<contactref element="CVM" pad="P$5"/>
+</signal>
+<signal name="N$6">
+<contactref element="CVM" pad="P$6"/>
+</signal>
+<signal name="N$7">
+<contactref element="CVM" pad="P$7"/>
+</signal>
+<signal name="N$8">
+<contactref element="CVM" pad="P$8"/>
+</signal>
+<signal name="FCPRES">
+<contactref element="PRESSURE" pad="P$3"/>
+<contactref element="U$1" pad="23/A9"/>
+<wire x1="59.69" y1="29.21" x2="14.24" y2="6.35" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
