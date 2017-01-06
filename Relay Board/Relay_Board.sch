@@ -2080,10 +2080,10 @@ SI6926ADQ-T1</text>
 <part name="D4" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="SOD123"/>
 <part name="U$21" library="Vishay_Shunt_Resistor_CSM3637" deviceset="SHUNT_RESISTOR_CSM3637" device=""/>
 <part name="U$22" library="Relay_CPC1907B" deviceset="RELAY-CPC1907B" device=""/>
-<part name="R12" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
-<part name="R13" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
-<part name="R14" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
-<part name="R15" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
+<part name="R12" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10K"/>
+<part name="R13" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10K"/>
+<part name="R14" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10K"/>
+<part name="R15" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10K"/>
 <part name="U$1" library="Connector 732-3204" deviceset="732-3204-ND_CONNECTOR" device=""/>
 <part name="U$2" library="Connector 732-3204" deviceset="732-3204-ND_CONNECTOR" device=""/>
 <part name="U$10" library="Connector 732-3204" deviceset="732-3204-ND_CONNECTOR" device=""/>
@@ -2576,17 +2576,12 @@ Current Sensor</text>
 <wire x1="185.42" y1="210.82" x2="180.34" y2="210.82" width="0.1524" layer="91"/>
 <label x="177.8" y="213.36" size="1.778" layer="95" rot="R180"/>
 </segment>
-<segment>
-<pinref part="U$19" gate="G$1" pin="4"/>
-<wire x1="185.42" y1="231.14" x2="180.34" y2="231.14" width="0.1524" layer="91"/>
-<label x="172.72" y="231.14" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="FC_CURR" class="0">
 <segment>
 <pinref part="ETH2" gate="G$1" pin="2"/>
 <wire x1="182.88" y1="117.475" x2="177.8" y2="117.475" width="0.1524" layer="91"/>
-<label x="167.64" y="117.475" size="1.778" layer="95"/>
+<label x="165.1" y="117.475" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U$7" gate="G$1" pin="OUT"/>
@@ -2910,11 +2905,6 @@ Current Sensor</text>
 <wire x1="185.42" y1="241.3" x2="180.34" y2="241.3" width="0.1524" layer="91"/>
 <label x="177.8" y="243.84" size="1.778" layer="95" rot="R180"/>
 </segment>
-<segment>
-<pinref part="U$19" gate="G$1" pin="3"/>
-<wire x1="185.42" y1="236.22" x2="180.34" y2="236.22" width="0.1524" layer="91"/>
-<label x="160.02" y="236.22" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="N$1" class="0">
 <segment>
@@ -2939,7 +2929,7 @@ Current Sensor</text>
 <segment>
 <pinref part="ETH2" gate="G$1" pin="1"/>
 <wire x1="182.88" y1="120.015" x2="177.8" y2="120.015" width="0.1524" layer="91"/>
-<label x="165.735" y="120.015" size="1.778" layer="95"/>
+<label x="163.195" y="120.015" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="OUT"/>
