@@ -161,7 +161,7 @@
 <text x="78.105" y="21.59" size="0.7" layer="21" font="vector" ratio="15">V40</text>
 <text x="89.535" y="21.59" size="0.7" layer="21" font="vector" ratio="15">V46</text>
 <text x="90.805" y="15.875" size="0.7" layer="21" font="vector" ratio="15">GND</text>
-<text x="47.117" y="89.027" size="1.27" layer="21" font="vector" ratio="15">UABERTA ECOCAR CVM BOARD</text>
+<text x="47.117" y="89.027" size="1.27" layer="21" font="vector" ratio="15">UABERTA ECOCAR Cell VM BOARD</text>
 </plain>
 <libraries>
 <library name="linear-technology">
