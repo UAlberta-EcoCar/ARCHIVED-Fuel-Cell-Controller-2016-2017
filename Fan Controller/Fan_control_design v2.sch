@@ -7970,7 +7970,7 @@ by exp-lbrs.ulp</description>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="D6" library="diode" deviceset="DIODE-" device="DO214AC"/>
 <part name="D3" library="diode" deviceset="DIODE-" device="DO214AC"/>
-<part name="ETH2" library="ETHERNET" deviceset="ETHERNET" device=""/>
+<part name="ETH2" library="ETHERNET" deviceset="ETHERNET" device="" value="FANS 1"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="D4" library="diode" deviceset="1N4728" device=""/>
 <part name="D5" library="diode" deviceset="DIODE-" device="DO214AC"/>
@@ -7983,7 +7983,7 @@ by exp-lbrs.ulp</description>
 <part name="R14" library="adafruit" deviceset="R-US_" device="R0603" value="250"/>
 <part name="R15" library="adafruit" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="ETH1" library="ETHERNET" deviceset="ETHERNET" device=""/>
+<part name="ETH1" library="ETHERNET" deviceset="ETHERNET" device="" value="FANS 2"/>
 <part name="R16" library="adafruit" deviceset="R-US_" device="R0603" value="100K"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="U$1" library="MyPOW" deviceset="+5V" device=""/>

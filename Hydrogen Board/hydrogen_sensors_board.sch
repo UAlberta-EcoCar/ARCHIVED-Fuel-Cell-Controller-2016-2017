@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6265,7 +6265,7 @@ Source: ENG_CD_1445055_A.pdf</description>
 <part name="H3" library="holes" deviceset="MOUNT-PAD-ROUND" device="3.6" value="MOUNT-PAD-ROUND3.6"/>
 <part name="H4" library="holes" deviceset="MOUNT-PAD-ROUND" device="3.6" value="MOUNT-PAD-ROUND3.6"/>
 <part name="GND22" library="SparkFun" deviceset="GND" device=""/>
-<part name="ETH1" library="ETHERNET" deviceset="ETHERNET" device=""/>
+<part name="ETH1" library="ETHERNET" deviceset="ETHERNET" device="" value="FCC"/>
 <part name="R5" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10k"/>
 <part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10k"/>
 <part name="R9" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10k"/>
@@ -6273,7 +6273,7 @@ Source: ENG_CD_1445055_A.pdf</description>
 <part name="U$9" library="Shell2013" deviceset="TE770966" device=""/>
 <part name="U$3" library="Shell2013" deviceset="TE770966" device=""/>
 <part name="JP6" library="SparkFun-Connectors" deviceset="FTDI_DEVICE" device=""/>
-<part name="H_INPUT" library="con-amp" deviceset="1445055-3" device=""/>
+<part name="REMOTE_SENS" library="con-amp" deviceset="1445055-3" device=""/>
 <part name="JP4" library="pinhead" deviceset="PINHD-1X3" device=""/>
 <part name="P+12" library="supply1" deviceset="+12V" device=""/>
 <part name="GND27" library="supply1" deviceset="GND" device=""/>
@@ -6323,7 +6323,7 @@ Source: ENG_CD_1445055_A.pdf</description>
 <instance part="U$9" gate="G$1" x="135.89" y="48.26" rot="R270"/>
 <instance part="U$3" gate="G$1" x="135.89" y="30.48" rot="R270"/>
 <instance part="JP6" gate="G$1" x="240.03" y="77.47"/>
-<instance part="H_INPUT" gate="G$1" x="200.66" y="50.8"/>
+<instance part="REMOTE_SENS" gate="G$1" x="200.66" y="50.8"/>
 <instance part="JP4" gate="A" x="176.53" y="53.34" rot="R180"/>
 <instance part="P+12" gate="1" x="193.04" y="62.23"/>
 <instance part="GND27" gate="1" x="193.04" y="44.45"/>
@@ -6539,7 +6539,7 @@ Source: ENG_CD_1445055_A.pdf</description>
 </segment>
 <segment>
 <pinref part="JP4" gate="A" pin="1"/>
-<pinref part="H_INPUT" gate="G$1" pin="1"/>
+<pinref part="REMOTE_SENS" gate="G$1" pin="1"/>
 <wire x1="179.07" y1="50.8" x2="193.04" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="50.8" x2="198.12" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="50.8" x2="193.04" y2="46.99" width="0.1524" layer="91"/>
@@ -6853,7 +6853,7 @@ Source: ENG_CD_1445055_A.pdf</description>
 <net name="H2_REMOTE" class="0">
 <segment>
 <pinref part="JP4" gate="A" pin="2"/>
-<pinref part="H_INPUT" gate="G$1" pin="2"/>
+<pinref part="REMOTE_SENS" gate="G$1" pin="2"/>
 <wire x1="179.07" y1="53.34" x2="198.12" y2="53.34" width="0.1524" layer="91"/>
 <label x="181.61" y="53.34" size="1.9304" layer="95"/>
 </segment>
@@ -6861,7 +6861,7 @@ Source: ENG_CD_1445055_A.pdf</description>
 <net name="+12V" class="0">
 <segment>
 <pinref part="JP4" gate="A" pin="3"/>
-<pinref part="H_INPUT" gate="G$1" pin="3"/>
+<pinref part="REMOTE_SENS" gate="G$1" pin="3"/>
 <wire x1="179.07" y1="55.88" x2="193.04" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="55.88" x2="198.12" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="193.04" y1="55.88" x2="193.04" y2="59.69" width="0.1524" layer="91"/>
