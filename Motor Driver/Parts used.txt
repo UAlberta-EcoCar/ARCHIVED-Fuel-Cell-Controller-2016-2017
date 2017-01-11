@@ -1,0 +1,5 @@
+http://www.digikey.ca/product-detail/en/keystone-electronics/4527/36-4527-ND/8397 - Fuse holder
+
+https://www.sparkfun.com/products/8084 - Screw terminals
+
+https://www.digikey.ca/products/en?keywords=BD62222HFP-TRCT-ND - H-Bridge
