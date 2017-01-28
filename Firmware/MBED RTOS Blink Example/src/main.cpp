@@ -21,12 +21,12 @@ void led3_thread(void const *args){
 }
 
 int main() {
-    Thread led2_t(led2_thread,NULL,osPriorityNormal,256*4);
-    Thread led3_t(led3_thread,NULL,osPriorityNormal,256*4);
+    //Thread led2_t(led2_thread,NULL,osPriorityNormal,256*4);
+    //Thread led3_t(led3_thread,NULL,osPriorityNormal,256*4);
 
     while (true) {
         led1 = !led1;
-        Thread::wait(20000);
-        led2_t.terminate(); //kill a thread
+        Thread::wait(200);
+        //led2_t.terminate(); //kill a thread
     }
 }

@@ -7,8 +7,6 @@
 
 void error_checking_thread(void const *args)
 {
-  while(true)
-  {
-    Thread::wait(5);
-  }
+
+  Thread::wait(5);
 }

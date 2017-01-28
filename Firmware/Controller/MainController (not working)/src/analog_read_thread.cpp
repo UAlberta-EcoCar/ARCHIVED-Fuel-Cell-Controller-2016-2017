@@ -24,13 +24,11 @@ float get_fcpres(void){return(fcpres_v);}
 
 void analog_read_thread(void const *args)
 {
-  while(true)
-  {
-    capvolt_v = capvolt;
-    fccurr_v = fccurr;
-    fcvolt_v = fcvolt;
-    capcurr_v = capcurr;
-    fcpres_v = fcpres;
-    Thread::wait(5);
-  }
+  capvolt_v = capvolt;
+  fccurr_v = fccurr;
+  fcvolt_v = fcvolt;
+  capcurr_v = capcurr;
+  fcpres_v = fcpres;
+
+  Thread::wait(5);
 }

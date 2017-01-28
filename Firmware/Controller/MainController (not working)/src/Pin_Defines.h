@@ -19,11 +19,11 @@
 #define MOTOR_R PTC1
 
 //analog voltage readings
-#define CAPVOLT PTD1
-#define FCCURR PTC0
-#define FCVOLT PTB0
-#define CAPCURR PTB1
-#define FCPRES PTC11//A11 is not defined for some reason will have to tie it to A19 which is near by
+#define CAPVOLT A0
+#define FCCURR A1
+#define FCVOLT A2
+#define CAPCURR A3
+#define FCPRES A20//A11 is not defined for some reason will have to tie it to A20 which is near by
 
 //Multiplexor pins
 #define MULTO2 PTD0
