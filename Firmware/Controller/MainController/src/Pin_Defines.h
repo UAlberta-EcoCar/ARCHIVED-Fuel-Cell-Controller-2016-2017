@@ -1,6 +1,8 @@
 #ifndef PIN_DEFINES_H
 #define PIN_DEFINES_H
 
+#include "mbed.h"
+
 //LED
 #define STATUS_LED D13
 
@@ -17,11 +19,11 @@
 #define MOTOR_R D22
 
 //analog voltage readings
-#define CAPVOLT
-#define FCCUR
-#define FCVOLT
-#define CAPCURR
-#define FCPRES
+#define CAPVOLT A0
+#define FCCURR A1
+#define FCVOLT A2
+#define CAPCURR A3
+#define FCPRES A20//A11 is not defined for some reason will have to tie it to A20 which is near by
 
 //Multiplexor pins
 #define MULTO2 D2
@@ -31,11 +33,11 @@
 
 //Serial
 //can bus
-#define CAN_RX Rx0
-#define CAN_TX Tx0
+#define CAN_RX D0//Rx0
+#define CAN_TX D1//Tx0
 //open log
-#define OL_RX Rx2
-#define OL_TX Tx2
+#define OL_RX D7//RX2
+#define OL_TX D8//TX2
 
 //I2C
 #define I2C_SDA SDA0
