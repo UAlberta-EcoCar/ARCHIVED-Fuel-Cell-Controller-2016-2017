@@ -17336,6 +17336,7 @@ TJ = 185 °C capability suitable for high reliability and automotive requirement
 <plain>
 <text x="91.44" y="170.18" size="6.4516" layer="94">STATUS LEDs</text>
 <text x="124.46" y="127" size="1.778" layer="94">Note: Check Atmega328p max current</text>
+<text x="167.64" y="101.6" size="1.778" layer="91">It Turns out A6 and A7 are ADC only Pins... OOPs</text>
 </plain>
 <instances>
 <instance part="FRAME7" gate="G$1" x="0" y="0"/>
