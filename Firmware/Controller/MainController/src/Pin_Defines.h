@@ -40,7 +40,7 @@
 #define OL_TX PTD3//TX2
 
 //I2C
-#define I2C_SDA SDA0
-#define I2C_SCL SCL0
+#define I2C_SDA PTB3
+#define I2C_SCL PTB2
 
 #endif
