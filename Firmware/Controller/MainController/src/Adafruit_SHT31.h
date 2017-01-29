@@ -32,12 +32,4 @@
 #define SHT31_HEATEREN             0x306D
 #define SHT31_HEATERDIS            0x3066
 
-void sht31_reset(void);
-void sht31_heater(bool h);
-float sht31_readTemperature(void);
-float sht31_readHumidity(void);
-
-void sht31_writeCommand(uint16_t cmd);
-bool sht31_readTempHum(void);
-
 #endif
