@@ -19,6 +19,8 @@ int main() {
     Thread error_checking_t(error_checking_thread,NULL,osPriorityNormal,256*4);
     Thread data_logging_t(data_logging_thread,NULL,osPriorityNormal,256*4);
     Thread sht31_readtemphum_t(sht31_readtemphum_thread,NULL,osPriorityNormal,256*4);
+    Thread set_indicator_leds_t(set_indicator_leds_thread,NULL,osPriorityNormal,256*4);
+    Thread fan_control_board_t(fan_control_board_thread,NULL,osPriorityNormal,256*4);
 
     while (true)
     {

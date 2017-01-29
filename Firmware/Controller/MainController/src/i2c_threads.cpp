@@ -6,6 +6,42 @@
 
 I2C i2c(I2C_SDA,I2C_SCL);
 
+char indicator_leds_reg[2];
+void set_indicator_leds_thread(void const *args)
+{
+  while(true)
+  {
+    indicator_leds_reg[0] ^= 0xFF;
+    i2c.write(LED_INDICATOR_ADDRESS<<1,indicator_leds_reg,2);
+    Thread::wait(200);
+  }
+}
+
+void set_indicator_leds(int val)
+{
+  indicator_leds_reg[0] = (char)val;
+  indicator_leds_reg[1] = (char)(val >>8);
+}
+
+char fan_pwr_status[2]; //needs to be array. second char will be ignored
+char fctemp[2];
+void fan_control_board_thread(void const *args)
+{
+  while(true)
+  {
+    i2c.write(FAN_CONTROL_BOARD_ADDRESS<<1,fan_pwr_status,1);
+    Thread::wait(50);
+    i2c.read(FAN_CONTROL_BOARD_ADDRESS<<1,fctemp,2);
+  }
+}
+void set_fan_pwr_status(char val)
+{
+  fan_pwr_status[0] = val;
+}
+float get_fctemp(void)
+{
+  return((fctemp[0]+fctemp[1])/2.0);
+}
 
 float temp;
 float humidity;

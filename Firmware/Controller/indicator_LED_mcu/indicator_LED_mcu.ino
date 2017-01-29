@@ -13,6 +13,9 @@ void setup() {
   Wire.onRequest(requestEvent);
   Wire.onReceive(receiveEvent);
 
+  Serial.begin(9600);
+  Serial.println("Starting");
+  
   pinMode(LED1,OUTPUT);
   pinMode(LED2,OUTPUT);
   pinMode(LED3,OUTPUT);
@@ -25,6 +28,8 @@ void setup() {
   pinMode(LED10,OUTPUT);
   pinMode(LED11,OUTPUT);
   pinMode(LED12,OUTPUT);
+
+  pinMode(13,OUTPUT);
 }
 
 void loop() {
@@ -108,12 +113,23 @@ void loop() {
   {
     digitalWrite(LED12,LOW);
   }
+  if(Reg)
+  {
+    digitalWrite(13,HIGH);
+  }
+  else
+  {
+    digitalWrite(13,LOW);
+  }
 }
 
 void requestEvent()
 {
   //insert data you want to send here
-  //Wire.send(date,number of bytes);
+//  char data[2];
+//  data[0] = 0xAB;
+//  data[1] = 0xCD;
+//  Wire.write(data,2);
 }
 
 void receiveEvent(int bytesReceived)
@@ -123,17 +139,17 @@ void receiveEvent(int bytesReceived)
     //first byte
     if(a == 0)
     {
-      Reg = Wire.receive();
+      Reg = Wire.read();
     }
     //second byte
     else if(a == 1)
     {
-      Reg |= Wire.receive() << 8;
+      Reg |= Wire.read() << 8;
     }
     //anything else
     else
     {
-      Wire.receive();
+      Wire.read();
     }
   }
 }
