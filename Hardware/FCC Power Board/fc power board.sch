@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="7.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -2818,7 +2818,7 @@ Source: TJ-Serie Vishay.pdf</description>
 </package>
 <package name="POWER-CHOKE_WE-TPC">
 <description>&lt;b&gt;POWER-CHOKE WE-TPC&lt;/b&gt;&lt;p&gt;
-Würth Elektronik, Partnumber: 744053220&lt;br&gt;
+W�rth Elektronik, Partnumber: 744053220&lt;br&gt;
 Source: WE-TPC 744053220.pdf</description>
 <wire x1="-2.8" y1="2.3" x2="-2.3" y2="2.8" width="0.2" layer="51" curve="-90"/>
 <wire x1="-2.3" y1="2.8" x2="2.3" y2="2.8" width="0.2" layer="51"/>
@@ -7284,7 +7284,7 @@ Source: http://www.vishay.com/docs/20008/dcrcw.pdf</description>
 <rectangle x1="-0.15" y1="-0.15" x2="0.15" y2="0.15" layer="21"/>
 </package>
 <package name="VMTA55">
-<description>&lt;b&gt;Bulk Metal® Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
+<description>&lt;b&gt;Bulk Metal� Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
 MIL SIZE RNC55&lt;br&gt;
 Source: VISHAY .. vta56.pdf</description>
 <wire x1="-5.08" y1="0" x2="-4.26" y2="0" width="0.6096" layer="51"/>
@@ -7301,7 +7301,7 @@ Source: VISHAY .. vta56.pdf</description>
 <rectangle x1="3.2825" y1="-0.3048" x2="4.235" y2="0.3048" layer="21"/>
 </package>
 <package name="VMTB60">
-<description>&lt;b&gt;Bulk Metal® Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
+<description>&lt;b&gt;Bulk Metal� Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
 MIL SIZE RNC60&lt;br&gt;
 Source: VISHAY .. vta56.pdf</description>
 <wire x1="-6.35" y1="0" x2="-5.585" y2="0" width="0.6096" layer="51"/>
@@ -7318,7 +7318,7 @@ Source: VISHAY .. vta56.pdf</description>
 <rectangle x1="4.6325" y1="-0.3048" x2="5.585" y2="0.3048" layer="21"/>
 </package>
 <package name="VTA52">
-<description>&lt;b&gt;Bulk Metal® Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
+<description>&lt;b&gt;Bulk Metal� Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
 MIL SIZE RBR52&lt;br&gt;
 Source: VISHAY .. vta56.pdf</description>
 <wire x1="-15.24" y1="0" x2="-13.97" y2="0" width="0.6096" layer="51"/>
@@ -7337,7 +7337,7 @@ Source: VISHAY .. vta56.pdf</description>
 <rectangle x1="12.5675" y1="-0.3048" x2="13.97" y2="0.3048" layer="21"/>
 </package>
 <package name="VTA53">
-<description>&lt;b&gt;Bulk Metal® Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
+<description>&lt;b&gt;Bulk Metal� Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
 MIL SIZE RBR53&lt;br&gt;
 Source: VISHAY .. vta56.pdf</description>
 <wire x1="-12.065" y1="0" x2="-10.795" y2="0" width="0.6096" layer="51"/>
@@ -7356,7 +7356,7 @@ Source: VISHAY .. vta56.pdf</description>
 <rectangle x1="9.8425" y1="-0.3048" x2="10.795" y2="0.3048" layer="21"/>
 </package>
 <package name="VTA54">
-<description>&lt;b&gt;Bulk Metal® Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
+<description>&lt;b&gt;Bulk Metal� Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
 MIL SIZE RBR54&lt;br&gt;
 Source: VISHAY .. vta56.pdf</description>
 <wire x1="-12.065" y1="0" x2="-10.795" y2="0" width="0.6096" layer="51"/>
@@ -7375,7 +7375,7 @@ Source: VISHAY .. vta56.pdf</description>
 <rectangle x1="9.8425" y1="-0.3048" x2="10.795" y2="0.3048" layer="21"/>
 </package>
 <package name="VTA55">
-<description>&lt;b&gt;Bulk Metal® Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
+<description>&lt;b&gt;Bulk Metal� Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
 MIL SIZE RBR55&lt;br&gt;
 Source: VISHAY .. vta56.pdf</description>
 <wire x1="-8.255" y1="0" x2="-6.985" y2="0" width="0.6096" layer="51"/>
@@ -7394,7 +7394,7 @@ Source: VISHAY .. vta56.pdf</description>
 <rectangle x1="6.35" y1="-0.3048" x2="6.985" y2="0.3048" layer="21"/>
 </package>
 <package name="VTA56">
-<description>&lt;b&gt;Bulk Metal® Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
+<description>&lt;b&gt;Bulk Metal� Foil Technology&lt;/b&gt;, Tubular Axial Lead Resistors, Meets or Exceeds MIL-R-39005 Requirements&lt;p&gt;
 MIL SIZE RBR56&lt;br&gt;
 Source: VISHAY .. vta56.pdf</description>
 <wire x1="-6.35" y1="0" x2="-5.08" y2="0" width="0.6096" layer="51"/>
@@ -10453,6 +10453,112 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="frames">
+<description>&lt;b&gt;Frames for Sheet and Layout&lt;/b&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="A3L-LOC">
+<wire x1="288.29" y1="3.81" x2="342.265" y2="3.81" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="3.81" x2="373.38" y2="3.81" width="0.1016" layer="94"/>
+<wire x1="373.38" y1="3.81" x2="383.54" y2="3.81" width="0.1016" layer="94"/>
+<wire x1="383.54" y1="3.81" x2="383.54" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="383.54" y1="8.89" x2="383.54" y2="13.97" width="0.1016" layer="94"/>
+<wire x1="383.54" y1="13.97" x2="383.54" y2="19.05" width="0.1016" layer="94"/>
+<wire x1="383.54" y1="19.05" x2="383.54" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="288.29" y1="3.81" x2="288.29" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="288.29" y1="24.13" x2="342.265" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="24.13" x2="383.54" y2="24.13" width="0.1016" layer="94"/>
+<wire x1="373.38" y1="3.81" x2="373.38" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="373.38" y1="8.89" x2="383.54" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="373.38" y1="8.89" x2="342.265" y2="8.89" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="8.89" x2="342.265" y2="3.81" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="8.89" x2="342.265" y2="13.97" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="13.97" x2="383.54" y2="13.97" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="13.97" x2="342.265" y2="19.05" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="19.05" x2="383.54" y2="19.05" width="0.1016" layer="94"/>
+<wire x1="342.265" y1="19.05" x2="342.265" y2="24.13" width="0.1016" layer="94"/>
+<text x="344.17" y="15.24" size="2.54" layer="94">&gt;DRAWING_NAME</text>
+<text x="344.17" y="10.16" size="2.286" layer="94">&gt;LAST_DATE_TIME</text>
+<text x="357.505" y="5.08" size="2.54" layer="94">&gt;SHEET</text>
+<text x="343.916" y="4.953" size="2.54" layer="94">Sheet:</text>
+<frame x1="0" y1="0" x2="387.35" y2="260.35" columns="8" rows="5" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="A3L-LOC" prefix="FRAME" uservalue="yes">
+<description>&lt;b&gt;FRAME&lt;/b&gt;&lt;p&gt;
+DIN A3, landscape with location and doc. field</description>
+<gates>
+<gate name="G$1" symbol="A3L-LOC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="SparkFun-Electromechanical">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find anything that moves- switches, relays, buttons, potentiometers. Also, anything that goes on a board but isn't electrical in nature- screws, standoffs, etc.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="STAND-OFF">
+<description>&lt;b&gt;Stand Off&lt;/b&gt;&lt;p&gt;
+This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="-180"/>
+<circle x="0" y="0" radius="2.794" width="0.127" layer="39"/>
+<hole x="0" y="0" drill="3.302"/>
+</package>
+<package name="STAND-OFF-TIGHT">
+<description>&lt;b&gt;Stand Off&lt;/b&gt;&lt;p&gt;
+This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
+<wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="-180"/>
+<circle x="0" y="0" radius="2.794" width="0.127" layer="39"/>
+<hole x="0" y="0" drill="3.048"/>
+</package>
+</packages>
+<symbols>
+<symbol name="STAND-OFF">
+<circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="STAND-OFF" prefix="STANDOFF">
+<description>&lt;b&gt;#4 Stand Off&lt;/b&gt;&lt;p&gt;
+This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<gates>
+<gate name="G$1" symbol="STAND-OFF" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="STAND-OFF">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="TIGHT" package="STAND-OFF-TIGHT">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -10513,6 +10619,12 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="PE10" library="supply1" deviceset="GND" device=""/>
 <part name="U$9" library="MURS120T3G" deviceset="MURS120T3G" device=""/>
 <part name="PE11" library="supply1" deviceset="GND" device=""/>
+<part name="FRAME1" library="frames" deviceset="A3L-LOC" device=""/>
+<part name="STANDOFF1" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
+<part name="STANDOFF2" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
+<part name="STANDOFF3" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
+<part name="STANDOFF4" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
+<part name="GND3" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10524,7 +10636,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <text x="-30.48" y="-25.4" size="1.778" layer="91">Battery 12V Output</text>
 <text x="91.44" y="33.02" size="1.778" layer="91">Fuel Cell 12V Output\</text>
 <text x="104.14" y="-48.26" size="1.778" layer="91">12V Output</text>
-<text x="107.95" y="55.88" size="1.778" layer="91">5 Volt Connected</text>
+<text x="-128.27" y="-58.42" size="1.778" layer="91">5 Volt Connected</text>
 </plain>
 <instances>
 <instance part="PE6" gate="1" x="66.04" y="-38.1"/>
@@ -10546,9 +10658,9 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="LED4" gate="G$1" x="83.82" y="35.56"/>
 <instance part="PE15" gate="1" x="83.82" y="25.4"/>
 <instance part="R17" gate="G$1" x="83.82" y="45.72" rot="R90"/>
-<instance part="LED5" gate="G$1" x="130.81" y="55.88" rot="R180"/>
-<instance part="PE16" gate="1" x="130.81" y="64.77" rot="R180"/>
-<instance part="R18" gate="G$1" x="130.81" y="45.72" rot="R90"/>
+<instance part="LED5" gate="G$1" x="-100.33" y="-58.42" rot="R180"/>
+<instance part="PE16" gate="1" x="-100.33" y="-49.53" rot="R180"/>
+<instance part="R18" gate="G$1" x="-100.33" y="-68.58" rot="R90"/>
 <instance part="LED6" gate="G$1" x="99.06" y="-45.72"/>
 <instance part="PE17" gate="1" x="99.06" y="-58.42"/>
 <instance part="R19" gate="G$1" x="99.06" y="-33.02" rot="R90"/>
@@ -10567,16 +10679,22 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="GND6" gate="1" x="-25.4" y="22.86"/>
 <instance part="U$11" gate="G$1" x="-132.08" y="40.64" rot="R180"/>
 <instance part="U$6" gate="G$1" x="-132.08" y="-5.08" rot="R180"/>
-<instance part="U$8" gate="A" x="163.83" y="38.1"/>
-<instance part="L2" gate="G$1" x="146.05" y="38.1" rot="R90"/>
-<instance part="C4" gate="G$1" x="130.81" y="33.02"/>
-<instance part="C7" gate="G$1" x="156.21" y="30.48"/>
-<instance part="PE7" gate="1" x="130.81" y="25.4"/>
-<instance part="PE8" gate="1" x="156.21" y="22.86"/>
-<instance part="PE9" gate="1" x="245.11" y="30.48"/>
-<instance part="PE10" gate="1" x="262.89" y="35.56"/>
-<instance part="U$9" gate="G$1" x="158.75" y="43.18" rot="R270"/>
-<instance part="PE11" gate="1" x="158.75" y="55.88" rot="R180"/>
+<instance part="U$8" gate="A" x="-67.31" y="-76.2"/>
+<instance part="L2" gate="G$1" x="-85.09" y="-76.2" rot="R90"/>
+<instance part="C4" gate="G$1" x="-100.33" y="-81.28"/>
+<instance part="C7" gate="G$1" x="-74.93" y="-83.82"/>
+<instance part="PE7" gate="1" x="-100.33" y="-88.9"/>
+<instance part="PE8" gate="1" x="-74.93" y="-91.44"/>
+<instance part="PE9" gate="1" x="13.97" y="-83.82"/>
+<instance part="PE10" gate="1" x="31.75" y="-78.74"/>
+<instance part="U$9" gate="G$1" x="-72.39" y="-71.12" rot="R270"/>
+<instance part="PE11" gate="1" x="-72.39" y="-58.42" rot="R180"/>
+<instance part="FRAME1" gate="G$1" x="-193.04" y="-121.92"/>
+<instance part="STANDOFF1" gate="G$1" x="-167.64" y="-17.78"/>
+<instance part="STANDOFF2" gate="G$1" x="-167.64" y="-22.86"/>
+<instance part="STANDOFF3" gate="G$1" x="-167.64" y="-27.94"/>
+<instance part="STANDOFF4" gate="G$1" x="-167.64" y="-33.02"/>
+<instance part="GND3" gate="1" x="17.78" y="43.18" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -10635,11 +10753,11 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 </segment>
 <segment>
 <pinref part="U$8" gate="A" pin="VIN"/>
-<wire x1="163.83" y1="35.56" x2="156.21" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="-67.31" y1="-78.74" x2="-74.93" y2="-78.74" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="1"/>
-<wire x1="156.21" y1="35.56" x2="146.05" y2="35.56" width="0.1524" layer="91"/>
-<junction x="156.21" y="35.56"/>
-<label x="143.51" y="33.02" size="1.778" layer="95"/>
+<wire x1="-74.93" y1="-78.74" x2="-85.09" y2="-78.74" width="0.1524" layer="91"/>
+<junction x="-74.93" y="-78.74"/>
+<label x="-87.63" y="-81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -10760,32 +10878,41 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <segment>
 <pinref part="U$8" gate="A" pin="~ON~/OFF"/>
 <pinref part="PE10" gate="1" pin="GND"/>
-<wire x1="234.95" y1="38.1" x2="262.89" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="3.81" y1="-76.2" x2="31.75" y2="-76.2" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$8" gate="A" pin="GND"/>
-<wire x1="234.95" y1="33.02" x2="245.11" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="3.81" y1="-81.28" x2="13.97" y2="-81.28" width="0.1524" layer="91"/>
 <pinref part="PE9" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="130.81" y1="30.48" x2="130.81" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-100.33" y1="-83.82" x2="-100.33" y2="-86.36" width="0.1524" layer="91"/>
 <pinref part="PE7" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C7" gate="G$1" pin="2"/>
-<wire x1="156.21" y1="27.94" x2="156.21" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-74.93" y1="-86.36" x2="-74.93" y2="-88.9" width="0.1524" layer="91"/>
 <pinref part="PE8" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U$9" gate="G$1" pin="PIN1"/>
-<wire x1="158.75" y1="50.8" x2="158.75" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="-72.39" y1="-63.5" x2="-72.39" y2="-60.96" width="0.1524" layer="91"/>
 <pinref part="PE11" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="PE16" gate="1" pin="GND"/>
 <pinref part="LED5" gate="G$1" pin="C"/>
-<wire x1="130.81" y1="62.23" x2="130.81" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="-100.33" y1="-52.07" x2="-100.33" y2="-53.34" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="-VIN"/>
+<wire x1="35.56" y1="43.18" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
+<label x="20.32" y="43.18" size="1.778" layer="95"/>
+<pinref part="U$5" gate="G$1" pin="ON/OFF"/>
+<wire x1="35.56" y1="48.26" x2="35.56" y2="43.18" width="0.1524" layer="91"/>
+<junction x="35.56" y="43.18"/>
+<pinref part="GND3" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="FC_12V" class="0">
@@ -10837,17 +10964,17 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <segment>
 <pinref part="C4" gate="G$1" pin="1"/>
 <pinref part="L2" gate="G$1" pin="1"/>
-<wire x1="130.81" y1="38.1" x2="138.43" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="130.81" y1="38.1" x2="123.19" y2="38.1" width="0.1524" layer="91"/>
-<junction x="130.81" y="38.1"/>
-<label x="123.19" y="38.1" size="1.778" layer="95"/>
+<wire x1="-100.33" y1="-76.2" x2="-92.71" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="-100.33" y1="-76.2" x2="-107.95" y2="-76.2" width="0.1524" layer="91"/>
+<junction x="-100.33" y="-76.2"/>
+<label x="-107.95" y="-76.2" size="1.778" layer="95"/>
 <pinref part="R18" gate="G$1" pin="1"/>
-<wire x1="130.81" y1="40.64" x2="130.81" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="-100.33" y1="-73.66" x2="-100.33" y2="-76.2" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$8" gate="A" pin="FB"/>
-<wire x1="234.95" y1="35.56" x2="245.11" y2="35.56" width="0.1524" layer="91"/>
-<label x="245.11" y="35.56" size="1.778" layer="95"/>
+<wire x1="3.81" y1="-78.74" x2="13.97" y2="-78.74" width="0.1524" layer="91"/>
+<label x="13.97" y="-78.74" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$21" class="0">
@@ -10887,16 +11014,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="U$5" gate="G$1" pin="+VIN"/>
 <wire x1="35.56" y1="53.34" x2="20.32" y2="53.34" width="0.1524" layer="91"/>
 <label x="20.32" y="53.34" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="FC_GND" class="0">
-<segment>
-<pinref part="U$5" gate="G$1" pin="-VIN"/>
-<wire x1="35.56" y1="43.18" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
-<label x="20.32" y="43.18" size="1.778" layer="95"/>
-<pinref part="U$5" gate="G$1" pin="ON/OFF"/>
-<wire x1="35.56" y1="48.26" x2="35.56" y2="43.18" width="0.1524" layer="91"/>
-<junction x="35.56" y="43.18"/>
 </segment>
 </net>
 <net name="FC_IN" class="0">
@@ -10969,18 +11086,18 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <net name="N$16" class="0">
 <segment>
 <pinref part="U$8" gate="A" pin="OUTOUT"/>
-<wire x1="163.83" y1="38.1" x2="158.75" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="-67.31" y1="-76.2" x2="-72.39" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="L2" gate="G$1" pin="2"/>
 <pinref part="U$9" gate="G$1" pin="P$2"/>
-<wire x1="158.75" y1="38.1" x2="153.67" y2="38.1" width="0.1524" layer="91"/>
-<junction x="158.75" y="38.1"/>
+<wire x1="-72.39" y1="-76.2" x2="-77.47" y2="-76.2" width="0.1524" layer="91"/>
+<junction x="-72.39" y="-76.2"/>
 </segment>
 </net>
 <net name="N$17" class="0">
 <segment>
 <pinref part="LED5" gate="G$1" pin="A"/>
 <pinref part="R18" gate="G$1" pin="2"/>
-<wire x1="130.81" y1="53.34" x2="130.81" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="-100.33" y1="-60.96" x2="-100.33" y2="-63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

@@ -45,7 +45,7 @@ Read Channel 0 in Single-Ended Unipolar mode
     ack |= LTC2309_read(LTC2309_I2C_ADDRESS, adc_command, &adc_code);   // Obtains the current reading and stores to adc_code variable
 
     // Convert adc_code to voltage
-    adc_voltage = LTC2309_unipolar_code_to_voltage(adc_code, LTC2309_lsb, LTC2309_offset_code);
+    adc_voltage = LTC2309_code_to_voltage(adc_code, vref, LTC2309_UNIPOLAR_MODE );
 
 @endverbatim
 
