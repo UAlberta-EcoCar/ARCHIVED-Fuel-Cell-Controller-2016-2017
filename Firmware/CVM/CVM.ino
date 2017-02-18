@@ -3,6 +3,7 @@
 #include "LT_I2C.h"
 #include  "LTC2309.h"
 
+//Variable for storing voltage readings
 float CellVoltages[46];
 
 void setup() {
