@@ -7,7 +7,7 @@
 float CellVoltages[46];
 
 void setup() {
-Serial.begin(9600); 
+Serial.begin(115200); 
 i2c_enable();
 }
  
@@ -28,9 +28,9 @@ void loop() {
 
 char Channels[8] = {0x80,0xC0,0x90,0xD0,0xA0,0xE0,0xB0,0xF0};
 int chipAddress[6] = {0001000,0001001,0001010,0001011,0011000, 0011001};
- 
+
 void collectData(void) {
-	char cellN = 0;
+	char CellN = 0;
 	for (int AN=0; AN< 6; AN++) {
   
 		for (int ChN = 0; ChN < 8; ChN++) {
