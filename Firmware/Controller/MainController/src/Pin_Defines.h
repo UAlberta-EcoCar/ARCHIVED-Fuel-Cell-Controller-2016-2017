@@ -32,9 +32,9 @@
 #define MULTO1 PTD7
 
 //Serial
-//can bus
-#define CAN_RX PTB16//Rx0
-#define CAN_TX PTB17//Tx0
+//data link
+#define LINK_RX PTB16//Rx0
+#define LINK_TX PTB17//Tx0
 //open log
 #define OL_RX PTD2//RX2
 #define OL_TX PTD3//TX2

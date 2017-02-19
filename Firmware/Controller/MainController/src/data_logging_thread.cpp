@@ -11,7 +11,7 @@ void data_logging_thread(void const *args)
 {
   while(true)
   {
-    ol_serial.printf("yo this is a testr\r\n");
+    ol_serial.printf("yo this is a test\r\n");
     ol_serial.printf("data is being logged to an sd card\r\n");
     Thread::wait(10);
   }

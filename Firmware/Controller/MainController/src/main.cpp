@@ -7,6 +7,7 @@
 #include "error_checking_thread.h"
 #include "data_logging_thread.h"
 #include "i2c_threads.h"
+#include "DataLinkThread.h"
 
 USBSerial serial;
 
@@ -21,6 +22,7 @@ int main() {
     Thread sht31_readtemphum_t(sht31_readtemphum_thread,NULL,osPriorityNormal,256*4);
     Thread set_indicator_leds_t(set_indicator_leds_thread,NULL,osPriorityNormal,256*4);
     Thread fan_control_board_t(fan_control_board_thread,NULL,osPriorityNormal,256*4);
+    Thread data_link_t(data_link_thread,NULL,osPriorityNormal,256*4);
 
     while (true)
     {
