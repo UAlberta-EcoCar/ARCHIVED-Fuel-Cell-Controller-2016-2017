@@ -19,11 +19,11 @@ void json_data(char * name,float value,char last)
 {
   if(last)
   {
-    link_serial.printf("\"%s\":%f",name,value);
+    link_serial.printf("\"%s\":%f",name,value); //no comma on line
   }
   else
   {
-    link_serial.printf("\"%s\":%f,",name,value);
+    link_serial.printf("\"%s\":%f,",name,value); //comma on line
   }
 }
 

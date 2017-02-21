@@ -108,3 +108,7 @@ float sht31_readHumidity(void)
   return humidity;
 }
 /*********************************************************************/
+
+
+
+//http://pic18fxx.blogspot.ca/2015/11/ds3231-library.html
