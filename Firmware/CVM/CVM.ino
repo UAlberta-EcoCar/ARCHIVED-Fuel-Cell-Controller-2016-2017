@@ -26,16 +26,14 @@ void loop() {
  
  }
 
-uint8_t Channels[8] = {0x80,0xC0,0x90,0xD0,0xA0,0xE0,0xB0,0xF0};
-uint8_t chipAddress[6] = {0b0001000,0b0001001,0b0001010,0b0001011,0b0011000, 0b0011001};
-
-unsigned int adc_code;
+char Channels[8] = {0x80,0xC0,0x90,0xD0,0xA0,0xE0,0xB0,0xF0};
+int chipAddress[6] = {0001000,0001001,0001010,0001011,0011000, 0011001};
 
 void collectData(void) {
 	char CellN = 0;
-	for (uint8_t AN=0; AN< 6; AN++) {
+	for (int AN=0; AN< 6; AN++) {
   
-		for (uint8_t ChN = 0; ChN < 8; ChN++) {
+		for (int ChN = 0; ChN < 8; ChN++) {
     
 			//Read Channel # in Single-Ended Unipolar mode
 			uint8_t adc_command = Channels[ChN] | LTC2309_UNIPOLAR_MODE;           // Set to read channel #
