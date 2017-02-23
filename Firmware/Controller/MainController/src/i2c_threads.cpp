@@ -110,5 +110,21 @@ float sht31_readHumidity(void)
 /*********************************************************************/
 
 
-
-//http://pic18fxx.blogspot.ca/2015/11/ds3231-library.html
+// ds3231 rtc_data
+char now[12]; //string containing ssmmhhddmmyy
+char ds3231_buffer[19];
+void ds3231_thread(void const *args)
+{
+  //reads data from rtc
+  while(1)
+  {
+    //i2c code here
+    //read into buffer
+    //write to string
+    Thread::wait(250);
+  }
+}
+char * get_time(void)
+{
+  return(now);
+}

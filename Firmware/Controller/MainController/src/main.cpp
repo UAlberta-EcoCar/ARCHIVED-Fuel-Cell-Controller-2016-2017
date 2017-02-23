@@ -10,9 +10,9 @@
 #include "DataLinkThread.h"
 
 USBSerial serial;
-
 DigitalOut status_led(STATUS_LED);
 
+char * datetime; //pointer to array for storing date/time
 int main() {
     Thread::wait(1000);
 
@@ -23,11 +23,16 @@ int main() {
     Thread set_indicator_leds_t(set_indicator_leds_thread,NULL,osPriorityNormal,256*4);
     Thread fan_control_board_t(fan_control_board_thread,NULL,osPriorityNormal,256*4);
     Thread data_link_t(data_link_thread,NULL,osPriorityNormal,256*4);
+    Thread ds3231_t(ds3231_thread,NULL,osPriorityNormal,256*4);
 
     while (true)
     {
         status_led = !status_led;
+
+        datetime = get_time();
+
         serial.printf("Hello World!\r\n");
+        serial.printf(datetime);
 
         Thread::wait(500);
     }

@@ -31,6 +31,7 @@ void analog_read_thread(void const *args)
     fcvolt_v = fcvolt;
     capcurr_v = capcurr;
     fcpres_v = fcpres;
+    
     Thread::wait(5);
   }
 }

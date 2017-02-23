@@ -14,4 +14,7 @@ void sht31_readtemphum_thread(void const *args);
 float sht31_readTemperature(void);
 float sht31_readHumidity(void);
 
+void ds3231_thread(void const *args);
+char * get_time(void);
+
 #endif
