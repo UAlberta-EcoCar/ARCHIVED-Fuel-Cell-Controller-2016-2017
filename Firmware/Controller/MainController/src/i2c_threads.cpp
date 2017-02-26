@@ -26,14 +26,14 @@ void set_indicator_leds(int val)
 }
 
 char fan_pwr_status[2]; //needs to be array. second char will be ignored
-char fctemp[2];
+char fctemp[3];
 void fan_control_board_thread(void const *args)
 {
   while(true)
   {
     i2c.write(FAN_CONTROL_BOARD_ADDRESS<<1,fan_pwr_status,1);
     Thread::wait(50);
-    i2c.read(FAN_CONTROL_BOARD_ADDRESS<<1,fctemp,2);
+    i2c.read(FAN_CONTROL_BOARD_ADDRESS<<1,fctemp,3);
   }
 }
 void set_fan_pwr_status(char val)
@@ -43,6 +43,17 @@ void set_fan_pwr_status(char val)
 float get_fctemp(void)
 {
   return((fctemp[0]+fctemp[1])/2.0);
+}
+bool get_fan_status(void)
+{
+  if(fctemp[3])
+  {
+    return(1);
+  }
+  else
+  {
+    return(0);
+  }
 }
 
 float temp;

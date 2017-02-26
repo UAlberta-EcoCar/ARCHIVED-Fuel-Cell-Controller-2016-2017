@@ -12,6 +12,7 @@
 #include "FC_Status.h"
 #include "startup_thread.h"
 #include "Charge_Thread.h"
+#include "Run_Thread.h"
 
 USBSerial serial;
 DigitalOut status_led(STATUS_LED);
@@ -32,12 +33,11 @@ int main() {
 
     Thread startup_t(startup_thread,NULL,osPriorityNormal,256*4);
     Thread charge_t(charge_thread,NULL,osPriorityNormal,256*4);
+    Thread run_t(run_thread,NULL,osPriorityNormal,256*4);
 
     set_fc_status(START_STATE);
 
     uint8_t count = 0;
-
-    char * bunchofdata;
 
     while (true)
     {
@@ -51,9 +51,8 @@ int main() {
         }
 
         serial.printf("Hello World!\r\n");
-        bunchofdata = get_time();
 
-        serial.printf("%s",bunchofdata);
+        serial.printf("The time is: %s",get_time());
 
         serial.printf("\r\n");
         serial.printf("The Temp Outside is: %f\r\n",sht31_readTemperature());

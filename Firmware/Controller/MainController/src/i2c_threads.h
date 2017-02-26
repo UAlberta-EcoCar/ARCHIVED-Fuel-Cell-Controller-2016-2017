@@ -10,6 +10,7 @@ int get_indicator_leds(void);
 void fan_control_board_thread(void const *args);
 void set_fan_pwr_status(char val);
 float get_fctemp(void);
+bool get_fan_status(void);
 
 void sht31_readtemphum_thread(void const *args);
 float sht31_readTemperature(void);

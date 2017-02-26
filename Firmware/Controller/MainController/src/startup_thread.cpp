@@ -18,10 +18,7 @@
 #include "startup_thread.h"
 #include "Thread_Signals.h"
 #include "FC_Status.h"
-
-DigitalOut supply_valve(SUPPLY_V);
-DigitalOut purge_valve(PURGE_V);
-DigitalOut fcc_resist_relay(START_R);
+#include "digital_io.h"
 
 // Values to reach on start up (pretty much made up at this point)
 #define FC_PRES1 5
@@ -36,7 +33,7 @@ void startup_thread(void const *args){
     Thread::wait(50);
   }
   // Open Supply Valve to let Hydrogen in
-  supply_valve = 1;
+  supply_valve(1);
 
   // Wait for pressure and voltage to reach the required level
   while((get_fcpres() < FC_PRES1) && (get_fcvolt() < FC_VOLT))
@@ -45,16 +42,16 @@ void startup_thread(void const *args){
   }
 
   // Close resistor relay to allow current draw
-  fcc_resist_relay = 1;
+  charge_relay(1);
   // open purge vale
-  purge_valve = 1;
+  purge_valve(1);
 
   //wait for 1 second
   Thread::wait(1000);
 
   //open relay, close valve
-  fcc_resist_relay = 0;
-  purge_valve = 0;
+  start_relay(0);
+  purge_valve(0);
 
   Thread::wait(200); //delay for relay to fully close
 
