@@ -4,6 +4,7 @@
 #define LED_INDICATOR_ADDRESS 0x01
 void set_indicator_leds_thread(void const *args);
 void set_indicator_leds(int val);
+int get_indicator_leds(void);
 
 #define FAN_CONTROL_BOARD_ADDRESS 0x02
 void fan_control_board_thread(void const *args);
@@ -14,6 +15,7 @@ void sht31_readtemphum_thread(void const *args);
 float sht31_readTemperature(void);
 float sht31_readHumidity(void);
 
+#define DS3231_ADDRESS 0x68
 void ds3231_thread(void const *args);
 char * get_time(void);
 

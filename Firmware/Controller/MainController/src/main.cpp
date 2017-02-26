@@ -8,11 +8,16 @@
 #include "data_logging_thread.h"
 #include "i2c_threads.h"
 #include "DataLinkThread.h"
+#include "Thread_Signals.h"
+#include "FC_Status.h"
+#include "startup_thread.h"
+#include "Charge_Thread.h"
 
 USBSerial serial;
 DigitalOut status_led(STATUS_LED);
 
 char * datetime; //pointer to array for storing date/time
+
 int main() {
     Thread::wait(1000);
 
@@ -25,14 +30,35 @@ int main() {
     Thread data_link_t(data_link_thread,NULL,osPriorityNormal,256*4);
     Thread ds3231_t(ds3231_thread,NULL,osPriorityNormal,256*4);
 
+    Thread startup_t(startup_thread,NULL,osPriorityNormal,256*4);
+    Thread charge_t(charge_thread,NULL,osPriorityNormal,256*4);
+
+    set_fc_status(START_STATE);
+
+    uint8_t count = 0;
+
+    char * bunchofdata;
+
     while (true)
     {
         status_led = !status_led;
 
-        datetime = get_time();
+        set_indicator_leds(1<<count);
+        count++;
+        if(count>11)
+        {
+          count=0;
+        }
 
         serial.printf("Hello World!\r\n");
-        serial.printf(datetime);
+        bunchofdata = get_time();
+
+        serial.printf("%s",bunchofdata);
+
+        serial.printf("\r\n");
+        serial.printf("The Temp Outside is: %f\r\n",sht31_readTemperature());
+        serial.printf("The Humidity Outside is: %f\r\n",sht31_readHumidity());
+        serial.printf("Fuel Cell Status is: %d\r\n",get_fc_status());
 
         Thread::wait(500);
     }

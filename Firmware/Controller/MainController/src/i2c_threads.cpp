@@ -11,16 +11,18 @@ void set_indicator_leds_thread(void const *args)
 {
   while(true)
   {
-    indicator_leds_reg[0] ^= 0xFF;
     i2c.write(LED_INDICATOR_ADDRESS<<1,indicator_leds_reg,2);
-    Thread::wait(200);
+    Thread::wait(100);
   }
 }
-
+int get_indicator_leds(void)
+{
+  return((int)indicator_leds_reg[0]|((int)indicator_leds_reg[1]<<8));
+}
 void set_indicator_leds(int val)
 {
   indicator_leds_reg[0] = (char)val;
-  indicator_leds_reg[1] = (char)(val >>8);
+  indicator_leds_reg[1] = (char)(val >> 8);
 }
 
 char fan_pwr_status[2]; //needs to be array. second char will be ignored
@@ -111,7 +113,7 @@ float sht31_readHumidity(void)
 
 
 // ds3231 rtc_data
-char now[12]; //string containing ssmmhhddmmyy
+char now[13]; //string containing ssmmhhddmmyy
 char ds3231_buffer[19];
 void ds3231_thread(void const *args)
 {
@@ -119,8 +121,31 @@ void ds3231_thread(void const *args)
   while(1)
   {
     //i2c code here
-    //read into buffer
+    i2c.write(DS3231_ADDRESS<<1,0,1);
+    Thread::wait(5);
+    i2c.read(DS3231_ADDRESS<<1,ds3231_buffer,19);
+
     //write to string
+    //seconds
+    now[1] = (ds3231_buffer[0]&0x0f) + 48;
+    now[0] = ((ds3231_buffer[0]&0xf0)>>4) + 48;
+    //minutes
+    now[3] = (ds3231_buffer[1]&0x0f) + 48;
+    now[2] = ((ds3231_buffer[1]&0xf0)>>4) + 48;
+    //hours
+    now[5] = (ds3231_buffer[2]&0x0f) + 48;
+    now[4] = ((ds3231_buffer[2]&0xf0)>>4) + 48;
+    //day
+    now[7] = (ds3231_buffer[4]&0x0f) + 48;
+    now[6] = ((ds3231_buffer[4]&0xf0)>>4) + 48;
+    //month
+    now[9] = (ds3231_buffer[5]&0x0f) + 48;
+    now[8] = ((ds3231_buffer[5]&0xf0)>>4) + 48;
+    //year
+    now[11] = (ds3231_buffer[6]&0x0f) + 48;
+    now[10] = ((ds3231_buffer[6]&0xf0)>>4) + 48;
+
+    now[12] = 0; //terminated with null char
     Thread::wait(250);
   }
 }

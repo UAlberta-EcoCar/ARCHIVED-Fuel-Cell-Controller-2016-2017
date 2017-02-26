@@ -4,7 +4,6 @@
 #include "Pin_Defines.h"
 
 #define SLAVE_ADDRESS 0x01
-#define REG_MAP_SIZE 14
 
 uint16_t Reg = 0;
 
@@ -13,9 +12,6 @@ void setup() {
   Wire.onRequest(requestEvent);
   Wire.onReceive(receiveEvent);
 
-  Serial.begin(9600);
-  Serial.println("Starting");
-  
   pinMode(LED1,OUTPUT);
   pinMode(LED2,OUTPUT);
   pinMode(LED3,OUTPUT);
@@ -33,7 +29,7 @@ void setup() {
 }
 
 void loop() {
-  if(Reg && (1 << 0))
+  if(bitRead(Reg,0))
   {
     digitalWrite(LED1,HIGH);
   }
@@ -41,7 +37,7 @@ void loop() {
   {
     digitalWrite(LED1,LOW);
   }
-  if(Reg && (1 << 1))
+  if(bitRead(Reg,1))
   {
     digitalWrite(LED2,HIGH);
   }
@@ -49,7 +45,7 @@ void loop() {
   {
     digitalWrite(LED2,LOW);
   }
-  if(Reg && (1 << 2))
+  if(bitRead(Reg,2))
   {
     digitalWrite(LED3,HIGH);
   }
@@ -57,7 +53,7 @@ void loop() {
   {
     digitalWrite(LED3,LOW);
   }
-  if(Reg && (1 << 3))
+  if(bitRead(Reg,3))
   {
     digitalWrite(LED4,HIGH);
   }
@@ -65,7 +61,7 @@ void loop() {
   {
     digitalWrite(LED4,LOW);
   }
-  if(Reg && (1 << 6))
+  if(bitRead(Reg,6))
   {
     digitalWrite(LED7,HIGH);
   }
@@ -73,7 +69,7 @@ void loop() {
   {
     digitalWrite(LED7,LOW);
   }
-  if(Reg && (1 << 7))
+  if(bitRead(Reg,7))
   {
     digitalWrite(LED8,HIGH);
   }
@@ -81,7 +77,7 @@ void loop() {
   {
     digitalWrite(LED8,LOW);
   }
-  if(Reg && (1 << 8))
+  if(bitRead(Reg,8))
   {
     digitalWrite(LED9,HIGH);
   }
@@ -89,7 +85,7 @@ void loop() {
   {
     digitalWrite(LED9,LOW);
   }
-  if(Reg && (1 << 9))
+  if(bitRead(Reg,9))
   {
     digitalWrite(LED10,HIGH);
   }
@@ -97,7 +93,7 @@ void loop() {
   {
     digitalWrite(LED10,LOW);
   }
-  if(Reg && (1 << 10))
+  if(bitRead(Reg,10))
   {
     digitalWrite(LED11,HIGH);
   }
@@ -105,7 +101,7 @@ void loop() {
   {
     digitalWrite(LED11,LOW);
   }
-  if(Reg && (1 << 11))
+  if(bitRead(Reg,11))
   {
     digitalWrite(LED12,HIGH);
   }
@@ -113,7 +109,7 @@ void loop() {
   {
     digitalWrite(LED12,LOW);
   }
-  if(Reg)
+  if(bitRead(Reg,12))
   {
     digitalWrite(13,HIGH);
   }
@@ -134,6 +130,7 @@ void requestEvent()
 
 void receiveEvent(int bytesReceived)
 {
+  Reg = 0;
   for (int a = 0;a<bytesReceived;a++)
   {
     //first byte
