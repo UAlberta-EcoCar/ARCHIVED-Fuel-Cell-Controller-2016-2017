@@ -3,4 +3,6 @@
 
 void error_checking_thread(void const *args);
 
+char get_error_state(void);
+
 #endif

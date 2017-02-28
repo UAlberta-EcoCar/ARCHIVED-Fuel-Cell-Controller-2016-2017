@@ -8,11 +8,11 @@
 #include "data_logging_thread.h"
 #include "i2c_threads.h"
 #include "DataLinkThread.h"
-#include "Thread_Signals.h"
 #include "FC_Status.h"
 #include "startup_thread.h"
 #include "Charge_Thread.h"
 #include "Run_Thread.h"
+#include "Shutdown_Thread.h"
 
 USBSerial serial;
 DigitalOut status_led(STATUS_LED);
@@ -34,6 +34,7 @@ int main() {
     Thread startup_t(startup_thread,NULL,osPriorityNormal,256*4);
     Thread charge_t(charge_thread,NULL,osPriorityNormal,256*4);
     Thread run_t(run_thread,NULL,osPriorityNormal,256*4);
+    Thread shutdown_t(shutdown_thread,NULL,osPriorityNormal,256*4);
 
     set_fc_status(START_STATE);
 

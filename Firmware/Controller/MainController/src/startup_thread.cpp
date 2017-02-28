@@ -16,7 +16,6 @@
 #include "error_checking_thread.h"
 #include "data_logging_thread.h"
 #include "startup_thread.h"
-#include "Thread_Signals.h"
 #include "FC_Status.h"
 #include "digital_io.h"
 
