@@ -58,25 +58,25 @@ void writeData(void);  //call function writeData
 
 
 void collectData(void) {
-	for (int AN=0; AN< 6; AN++) {
+  for (int AN=0; AN< 6; AN++) {
   
   int AverageAdcVoltage=0;
 
-		for (int ChN = 0; ChN < 8; ChN++) {
+    for (int ChN = 0; ChN < 8; ChN++) {
     
         for (int N = 0; N<20; N ++){
     
-			  //Read Channel # in Single-Ended Unipolar mode
-			  uint8_t adc_command = Channels[ChN] | LTC2309_UNIPOLAR_MODE;           // Set to read channel #
+        //Read Channel # in Single-Ended Unipolar mode
+        uint8_t adc_command = Channels[ChN] | LTC2309_UNIPOLAR_MODE;           // Set to read channel #
   
-			  uint8_t ack = 0;
+        uint8_t ack = 0;
         uint16_t adc_code = 0;
-			  ack |= LTC2309_read(chipAddress[AN], adc_command, &adc_code);   // Throws out last reading
-		  	ack |= LTC2309_read(chipAddress[AN], adc_command, &adc_code);   // Obtains the current reading and stores to adc_code variable
+        ack |= LTC2309_read(chipAddress[AN], adc_command, &adc_code);   // Throws out last reading
+        ack |= LTC2309_read(chipAddress[AN], adc_command, &adc_code);   // Obtains the current reading and stores to adc_code variable
     
  
-			  // Convert adc_code to voltage
-		  	uint8_t adc_voltage = LTC2309_code_to_voltage(adc_code, 2.5f, LTC2309_UNIPOLAR_MODE); //i think the interal reference voltage is 2.5
+        // Convert adc_code to voltage
+        uint8_t adc_voltage = LTC2309_code_to_voltage(adc_code, 2.5f, LTC2309_UNIPOLAR_MODE); //i think the interal reference voltage is 2.5
 
 
         //calculating the average of the 20 voltages read on a channel
@@ -89,10 +89,10 @@ void collectData(void) {
               
                CellVoltages[CellN] = (AverageAdcVoltage)/20;
                CellN =(CellN + 1);
-	    	}
+        }
        
     
-    	}
+      }
   return;
 }
 
