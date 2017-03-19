@@ -13,6 +13,8 @@
 #include "Charge_Thread.h"
 #include "Run_Thread.h"
 #include "Shutdown_Thread.h"
+#include "multiplexor.h"
+#include "digital_io.h"
 
 USBSerial serial;
 DigitalOut status_led(STATUS_LED);
@@ -23,7 +25,7 @@ int main() {
     Thread::wait(1000);
 
     Thread analog_read_t(analog_read_thread,NULL,osPriorityNormal,256*4);
-    Thread error_checking_t(error_checking_thread,NULL,osPriorityNormal,256*4);
+//    Thread error_checking_t(error_checking_thread,NULL,osPriorityNormal,256*4);
     Thread data_logging_t(data_logging_thread,NULL,osPriorityNormal,256*4);
     Thread sht31_readtemphum_t(sht31_readtemphum_thread,NULL,osPriorityNormal,256*4);
     Thread set_indicator_leds_t(set_indicator_leds_thread,NULL,osPriorityNormal,256*4);
@@ -31,10 +33,10 @@ int main() {
     Thread data_link_t(data_link_thread,NULL,osPriorityNormal,256*4);
     Thread ds3231_t(ds3231_thread,NULL,osPriorityNormal,256*4);
 
-    Thread startup_t(startup_thread,NULL,osPriorityNormal,256*4);
-    Thread charge_t(charge_thread,NULL,osPriorityNormal,256*4);
-    Thread run_t(run_thread,NULL,osPriorityNormal,256*4);
-    Thread shutdown_t(shutdown_thread,NULL,osPriorityNormal,256*4);
+//    Thread startup_t(startup_thread,NULL,osPriorityNormal,256*4);
+//    Thread charge_t(charge_thread,NULL,osPriorityNormal,256*4);
+//    Thread run_t(run_thread,NULL,osPriorityNormal,256*4);
+//    Thread shutdown_t(shutdown_thread,NULL,osPriorityNormal,256*4);
 
     set_fc_status(START_STATE);
 
@@ -59,6 +61,8 @@ int main() {
         serial.printf("The Temp Outside is: %f\r\n",sht31_readTemperature());
         serial.printf("The Humidity Outside is: %f\r\n",sht31_readHumidity());
         serial.printf("Fuel Cell Status is: %d\r\n",get_fc_status());
+
+        serial.printf("H2 Status%d\r\n",read_H2_OK());
 
         Thread::wait(500);
     }
