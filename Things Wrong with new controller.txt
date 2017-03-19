@@ -1,0 +1,6 @@
+backwards isp header
+fcpres pin
+6p6c connectors backwards
+Start button
+status leds
+AND gate can't handle 5V if run at 3.3
