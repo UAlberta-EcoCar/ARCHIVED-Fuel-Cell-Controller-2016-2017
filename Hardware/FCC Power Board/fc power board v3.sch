@@ -10451,16 +10451,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="D1" library="Power Board Components" deviceset="VISHAY_SL43" device=""/>
 <part name="D2" library="Power Board Components" deviceset="VISHAY_SL43" device=""/>
-<part name="U$10" library="Shell2013" deviceset="FUSE" device="MINI-BLADE"/>
+<part name="BATTERY_FUSE" library="Shell2013" deviceset="FUSE" device="MINI-BLADE"/>
 <part name="C27" library="resistor" deviceset="C-US" device="C0805" value="3.3uF"/>
 <part name="C28" library="resistor" deviceset="C-US" device="C0805" value="3.3uF"/>
 <part name="PE36" library="supply1" deviceset="GND" device=""/>
 <part name="PE37" library="supply1" deviceset="GND" device=""/>
-<part name="U$12" library="Shell2013" deviceset="43650-0200" device=""/>
-<part name="LED4" library="SparkFun" deviceset="LED" device="1206"/>
+<part name="BATTER_IN" library="Shell2013" deviceset="43650-0200" device="" value=""/>
+<part name="FC_12" library="SparkFun" deviceset="LED" device="1206"/>
 <part name="PE15" library="supply1" deviceset="GND" device=""/>
 <part name="R17" library="resistor" deviceset="R-US_" device="R0805" value="500"/>
-<part name="LED6" library="SparkFun" deviceset="LED" device="1206"/>
+<part name="12V_OUT" library="SparkFun" deviceset="LED" device="1206"/>
 <part name="PE17" library="supply1" deviceset="GND" device=""/>
 <part name="R19" library="rcl" deviceset="R-US_" device="M0805" value="500"/>
 <part name="C5" library="399-6608-ND" deviceset="399-6608-ND" device="" value="330u"/>
@@ -10469,14 +10469,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$5" library="Power Board Components" deviceset="E36SR12004" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="C2" library="resistor" deviceset="C-US" device="C0805" value="2.2u"/>
-<part name="LED1" library="SparkFun" deviceset="LED" device="1206"/>
+<part name="BAT_12" library="SparkFun" deviceset="LED" device="1206"/>
 <part name="PE2" library="supply1" deviceset="GND" device=""/>
 <part name="R1" library="resistor" deviceset="R-US_" device="R0805" value="500"/>
-<part name="LED2" library="SparkFun" deviceset="LED" device="1206"/>
+<part name="FC_PWR" library="SparkFun" deviceset="LED" device="1206"/>
 <part name="R2" library="resistor" deviceset="R-US_" device="R0805" value="2.3k"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="U$11" library="5555140-6 RJ11" deviceset="5555140-6" device=""/>
-<part name="U$6" library="5555140-6 RJ11" deviceset="5555140-6" device=""/>
+<part name="OUT_2" library="5555140-6 RJ11" deviceset="5555140-6" device="" value=""/>
+<part name="FC_IN" library="5555140-6 RJ11" deviceset="5555140-6" device="" value=""/>
 <part name="FRAME1" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="STANDOFF1" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
 <part name="STANDOFF2" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
@@ -10489,12 +10489,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$15" library="Shell2015" deviceset="CAP" device="ESK108M025AH4EA"/>
 <part name="U$16" library="Shell2015" deviceset="M1418-ND" device=""/>
 <part name="U$8" library="283-4148-1-ND" deviceset="283-4148-1-ND" device=""/>
-<part name="U$9" library="5555140-6 RJ11" deviceset="5555140-6" device=""/>
+<part name="OUT_1" library="5555140-6 RJ11" deviceset="5555140-6" device="" value=""/>
 <part name="R3" library="resistor" deviceset="R-US_" device="R0805"/>
 <part name="R4" library="resistor" deviceset="R-US_" device="R0805"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="R5" library="resistor" deviceset="R-US_" device="R0805" value="500"/>
-<part name="LED3" library="SparkFun" deviceset="LED" device="1206"/>
+<part name="5V_OUT" library="SparkFun" deviceset="LED" device="1206"/>
 <part name="PE1" library="supply1" deviceset="GND" device=""/>
 <part name="PE3" library="supply1" deviceset="GND" device=""/>
 <part name="PE4" library="supply1" deviceset="GND" device=""/>
@@ -10522,16 +10522,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND2" gate="1" x="-93.98" y="-10.16"/>
 <instance part="D1" gate="G$1" x="30.48" y="-22.86"/>
 <instance part="D2" gate="G$1" x="45.72" y="-2.54" rot="R270"/>
-<instance part="U$10" gate="G$1" x="-71.12" y="-12.7"/>
+<instance part="BATTERY_FUSE" gate="G$1" x="-71.12" y="-12.7"/>
 <instance part="C27" gate="G$1" x="76.2" y="-27.94"/>
 <instance part="C28" gate="G$1" x="83.82" y="-27.94"/>
 <instance part="PE36" gate="1" x="76.2" y="-38.1"/>
 <instance part="PE37" gate="1" x="83.82" y="-38.1"/>
-<instance part="U$12" gate="G$1" x="-91.44" y="2.54" rot="R90"/>
-<instance part="LED4" gate="G$1" x="83.82" y="35.56"/>
+<instance part="BATTER_IN" gate="G$1" x="-91.44" y="2.54" rot="R90"/>
+<instance part="FC_12" gate="G$1" x="83.82" y="35.56"/>
 <instance part="PE15" gate="1" x="83.82" y="25.4"/>
 <instance part="R17" gate="G$1" x="83.82" y="45.72" rot="R90"/>
-<instance part="LED6" gate="G$1" x="99.06" y="-45.72"/>
+<instance part="12V_OUT" gate="G$1" x="99.06" y="-45.72"/>
 <instance part="PE17" gate="1" x="99.06" y="-58.42"/>
 <instance part="R19" gate="G$1" x="99.06" y="-33.02" rot="R90"/>
 <instance part="C5" gate="G$1" x="55.88" y="-27.94"/>
@@ -10540,14 +10540,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U$5" gate="G$1" x="48.26" y="48.26"/>
 <instance part="GND5" gate="1" x="66.04" y="35.56"/>
 <instance part="C2" gate="G$1" x="-38.1" y="43.18"/>
-<instance part="LED1" gate="G$1" x="-35.56" y="-22.86"/>
+<instance part="BAT_12" gate="G$1" x="-35.56" y="-22.86"/>
 <instance part="PE2" gate="1" x="-35.56" y="-33.02"/>
 <instance part="R1" gate="G$1" x="-35.56" y="-12.7" rot="R90"/>
-<instance part="LED2" gate="G$1" x="-25.4" y="35.56"/>
+<instance part="FC_PWR" gate="G$1" x="-25.4" y="35.56"/>
 <instance part="R2" gate="G$1" x="-25.4" y="45.72" rot="R90"/>
 <instance part="GND6" gate="1" x="-25.4" y="22.86"/>
-<instance part="U$11" gate="G$1" x="-132.08" y="40.64" rot="R180"/>
-<instance part="U$6" gate="G$1" x="-132.08" y="-5.08" rot="R180"/>
+<instance part="OUT_2" gate="G$1" x="-132.08" y="40.64" rot="R180"/>
+<instance part="FC_IN" gate="G$1" x="-132.08" y="-5.08" rot="R180"/>
 <instance part="FRAME1" gate="G$1" x="-193.04" y="-121.92"/>
 <instance part="STANDOFF1" gate="G$1" x="-167.64" y="-17.78"/>
 <instance part="STANDOFF2" gate="G$1" x="-167.64" y="-22.86"/>
@@ -10560,12 +10560,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U$15" gate="G$1" x="-27.94" y="-88.9" rot="R270"/>
 <instance part="U$16" gate="G$1" x="-43.18" y="-68.58"/>
 <instance part="U$8" gate="G$1" x="-55.88" y="53.34" rot="R90"/>
-<instance part="U$9" gate="G$1" x="-132.08" y="93.98" rot="R180"/>
+<instance part="OUT_1" gate="G$1" x="-132.08" y="93.98" rot="R180"/>
 <instance part="R3" gate="G$1" x="58.42" y="27.94" rot="R90"/>
 <instance part="R4" gate="G$1" x="48.26" y="27.94" rot="R270"/>
 <instance part="GND4" gate="1" x="58.42" y="20.32"/>
 <instance part="R5" gate="G$1" x="-5.08" y="-83.82" rot="R90"/>
-<instance part="LED3" gate="G$1" x="-5.08" y="-93.98"/>
+<instance part="5V_OUT" gate="G$1" x="-5.08" y="-93.98"/>
 <instance part="PE1" gate="1" x="-27.94" y="-106.68"/>
 <instance part="PE3" gate="1" x="-5.08" y="-104.14"/>
 <instance part="PE4" gate="1" x="-114.3" y="-106.68"/>
@@ -10587,7 +10587,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-58.42" y1="-7.62" x2="-58.42" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-58.42" y1="-5.08" x2="-35.56" y2="-5.08" width="0.1524" layer="91"/>
 <label x="-22.86" y="-5.08" size="1.778" layer="95"/>
-<pinref part="U$10" gate="G$1" pin="OUT"/>
+<pinref part="BATTERY_FUSE" gate="G$1" pin="OUT"/>
 <wire x1="-35.56" y1="-5.08" x2="-25.4" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-68.58" y1="-5.08" x2="-58.42" y2="-5.08" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
@@ -10637,22 +10637,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="-127" y="-83.82" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="2"/>
+<pinref part="OUT_1" gate="G$1" pin="2"/>
 <wire x1="-124.46" y1="86.36" x2="-121.92" y2="86.36" width="0.1524" layer="91"/>
 <label x="-121.92" y="86.36" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$11" gate="G$1" pin="1"/>
+<pinref part="OUT_2" gate="G$1" pin="1"/>
 <wire x1="-124.46" y1="27.94" x2="-121.92" y2="27.94" width="0.1524" layer="91"/>
 <label x="-121.92" y="27.94" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$11" gate="G$1" pin="2"/>
+<pinref part="OUT_2" gate="G$1" pin="2"/>
 <wire x1="-124.46" y1="33.02" x2="-121.92" y2="33.02" width="0.1524" layer="91"/>
 <label x="-121.92" y="33.02" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="1"/>
+<pinref part="OUT_1" gate="G$1" pin="1"/>
 <wire x1="-124.46" y1="81.28" x2="-121.92" y2="81.28" width="0.1524" layer="91"/>
 <label x="-121.92" y="81.28" size="1.778" layer="95"/>
 </segment>
@@ -10680,12 +10680,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="PE15" gate="1" pin="GND"/>
-<pinref part="LED4" gate="G$1" pin="C"/>
+<pinref part="FC_12" gate="G$1" pin="C"/>
 <wire x1="83.82" y1="27.94" x2="83.82" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="PE17" gate="1" pin="GND"/>
-<pinref part="LED6" gate="G$1" pin="C"/>
+<pinref part="12V_OUT" gate="G$1" pin="C"/>
 <wire x1="99.06" y1="-55.88" x2="99.06" y2="-50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -10705,12 +10705,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
-<pinref part="U$12" gate="G$1" pin="P$1"/>
+<pinref part="BATTER_IN" gate="G$1" pin="P$1"/>
 <wire x1="-93.98" y1="-7.62" x2="-93.98" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="PE2" gate="1" pin="GND"/>
-<pinref part="LED1" gate="G$1" pin="C"/>
+<pinref part="BAT_12" gate="G$1" pin="C"/>
 <wire x1="-35.56" y1="-30.48" x2="-35.56" y2="-27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -10725,7 +10725,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-38.1" y1="38.1" x2="-38.1" y2="27.94" width="0.1524" layer="91"/>
 <junction x="-76.2" y="27.94"/>
 <junction x="-38.1" y="27.94"/>
-<pinref part="LED2" gate="G$1" pin="C"/>
+<pinref part="FC_PWR" gate="G$1" pin="C"/>
 <wire x1="-25.4" y1="30.48" x2="-25.4" y2="27.94" width="0.1524" layer="91"/>
 <junction x="-25.4" y="27.94"/>
 <wire x1="-25.4" y1="27.94" x2="-25.4" y2="25.4" width="0.1524" layer="91"/>
@@ -10733,42 +10733,42 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="-104.14" y="27.94" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$11" gate="G$1" pin="SH2"/>
+<pinref part="OUT_2" gate="G$1" pin="SH2"/>
 <wire x1="-124.46" y1="63.5" x2="-121.92" y2="63.5" width="0.1524" layer="91"/>
 <label x="-121.92" y="63.5" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$11" gate="G$1" pin="SH1"/>
+<pinref part="OUT_2" gate="G$1" pin="SH1"/>
 <wire x1="-124.46" y1="58.42" x2="-121.92" y2="58.42" width="0.1524" layer="91"/>
 <label x="-121.92" y="58.42" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$11" gate="G$1" pin="5"/>
+<pinref part="OUT_2" gate="G$1" pin="5"/>
 <wire x1="-124.46" y1="48.26" x2="-121.92" y2="48.26" width="0.1524" layer="91"/>
 <label x="-121.92" y="48.26" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$11" gate="G$1" pin="6"/>
+<pinref part="OUT_2" gate="G$1" pin="6"/>
 <wire x1="-124.46" y1="53.34" x2="-121.92" y2="53.34" width="0.1524" layer="91"/>
 <label x="-121.92" y="53.34" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$6" gate="G$1" pin="SH2"/>
+<pinref part="FC_IN" gate="G$1" pin="SH2"/>
 <wire x1="-124.46" y1="17.78" x2="-121.92" y2="17.78" width="0.1524" layer="91"/>
 <label x="-121.92" y="17.78" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$6" gate="G$1" pin="SH1"/>
+<pinref part="FC_IN" gate="G$1" pin="SH1"/>
 <wire x1="-124.46" y1="12.7" x2="-121.92" y2="12.7" width="0.1524" layer="91"/>
 <label x="-121.92" y="12.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$6" gate="G$1" pin="6"/>
+<pinref part="FC_IN" gate="G$1" pin="6"/>
 <wire x1="-124.46" y1="7.62" x2="-121.92" y2="7.62" width="0.1524" layer="91"/>
 <label x="-121.92" y="7.62" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$6" gate="G$1" pin="5"/>
+<pinref part="FC_IN" gate="G$1" pin="5"/>
 <wire x1="-124.46" y1="2.54" x2="-121.92" y2="2.54" width="0.1524" layer="91"/>
 <label x="-121.92" y="2.54" size="1.778" layer="95"/>
 </segment>
@@ -10811,22 +10811,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="-33.02" y="-50.8" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="SH2"/>
+<pinref part="OUT_1" gate="G$1" pin="SH2"/>
 <wire x1="-124.46" y1="116.84" x2="-121.92" y2="116.84" width="0.1524" layer="91"/>
 <label x="-121.92" y="116.84" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="SH1"/>
+<pinref part="OUT_1" gate="G$1" pin="SH1"/>
 <wire x1="-124.46" y1="111.76" x2="-121.92" y2="111.76" width="0.1524" layer="91"/>
 <label x="-121.92" y="111.76" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="5"/>
+<pinref part="OUT_1" gate="G$1" pin="5"/>
 <wire x1="-124.46" y1="101.6" x2="-121.92" y2="101.6" width="0.1524" layer="91"/>
 <label x="-121.92" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="6"/>
+<pinref part="OUT_1" gate="G$1" pin="6"/>
 <wire x1="-124.46" y1="106.68" x2="-121.92" y2="106.68" width="0.1524" layer="91"/>
 <label x="-121.92" y="106.68" size="1.778" layer="95"/>
 </segment>
@@ -10835,7 +10835,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LED3" gate="G$1" pin="C"/>
+<pinref part="5V_OUT" gate="G$1" pin="C"/>
 <pinref part="PE3" gate="1" pin="GND"/>
 <wire x1="-5.08" y1="-99.06" x2="-5.08" y2="-101.6" width="0.1524" layer="91"/>
 </segment>
@@ -10882,22 +10882,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="BATT_IN" class="0">
 <segment>
 <label x="-88.9" y="-5.08" size="1.778" layer="95"/>
-<pinref part="U$10" gate="G$1" pin="IN"/>
+<pinref part="BATTERY_FUSE" gate="G$1" pin="IN"/>
 <wire x1="-88.9" y1="-2.54" x2="-88.9" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-88.9" y1="-5.08" x2="-73.66" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="U$12" gate="G$1" pin="P$2"/>
+<pinref part="BATTER_IN" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="N$21" class="0">
 <segment>
-<pinref part="LED4" gate="G$1" pin="A"/>
+<pinref part="FC_12" gate="G$1" pin="A"/>
 <pinref part="R17" gate="G$1" pin="1"/>
 <wire x1="83.82" y1="38.1" x2="83.82" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
 <segment>
-<pinref part="LED6" gate="G$1" pin="A"/>
+<pinref part="12V_OUT" gate="G$1" pin="A"/>
 <pinref part="R19" gate="G$1" pin="1"/>
 <wire x1="99.06" y1="-43.18" x2="99.06" y2="-38.1" width="0.1524" layer="91"/>
 </segment>
@@ -10934,60 +10934,60 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="-104.14" y="53.34" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$6" gate="G$1" pin="2"/>
+<pinref part="FC_IN" gate="G$1" pin="2"/>
 <wire x1="-124.46" y1="-12.7" x2="-121.92" y2="-12.7" width="0.1524" layer="91"/>
 <label x="-121.92" y="-12.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$6" gate="G$1" pin="1"/>
+<pinref part="FC_IN" gate="G$1" pin="1"/>
 <wire x1="-124.46" y1="-17.78" x2="-121.92" y2="-17.78" width="0.1524" layer="91"/>
 <label x="-121.92" y="-17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="LED1" gate="G$1" pin="A"/>
+<pinref part="BAT_12" gate="G$1" pin="A"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="-35.56" y1="-20.32" x2="-35.56" y2="-17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="LED2" gate="G$1" pin="A"/>
+<pinref part="FC_PWR" gate="G$1" pin="A"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="-25.4" y1="38.1" x2="-25.4" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$20" class="0">
 <segment>
-<pinref part="U$6" gate="G$1" pin="4"/>
+<pinref part="FC_IN" gate="G$1" pin="4"/>
 <wire x1="-124.46" y1="-2.54" x2="-121.92" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$23" class="0">
 <segment>
-<pinref part="U$6" gate="G$1" pin="3"/>
+<pinref part="FC_IN" gate="G$1" pin="3"/>
 <wire x1="-124.46" y1="-7.62" x2="-121.92" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="5V_OUT" class="0">
 <segment>
-<pinref part="U$11" gate="G$1" pin="3"/>
+<pinref part="OUT_2" gate="G$1" pin="3"/>
 <wire x1="-124.46" y1="38.1" x2="-121.92" y2="38.1" width="0.1524" layer="91"/>
 <label x="-121.92" y="38.1" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$11" gate="G$1" pin="4"/>
+<pinref part="OUT_2" gate="G$1" pin="4"/>
 <wire x1="-124.46" y1="43.18" x2="-121.92" y2="43.18" width="0.1524" layer="91"/>
 <label x="-121.92" y="43.18" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="3"/>
+<pinref part="OUT_1" gate="G$1" pin="3"/>
 <wire x1="-124.46" y1="91.44" x2="-121.92" y2="91.44" width="0.1524" layer="91"/>
 <label x="-121.92" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$9" gate="G$1" pin="4"/>
+<pinref part="OUT_1" gate="G$1" pin="4"/>
 <wire x1="-124.46" y1="96.52" x2="-121.92" y2="96.52" width="0.1524" layer="91"/>
 <label x="-121.92" y="96.52" size="1.778" layer="95"/>
 </segment>
@@ -11035,7 +11035,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="N$6" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
-<pinref part="LED3" gate="G$1" pin="A"/>
+<pinref part="5V_OUT" gate="G$1" pin="A"/>
 <wire x1="-5.08" y1="-88.9" x2="-5.08" y2="-91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
