@@ -18,8 +18,8 @@ int AverageAdcVoltage=0;
  uint8_t ack = 0;
  uint16_t adc_code = 0;
 
-int Channels[8] = {0x80,0xC0,0x90,0xD0,0xA0,0xE0,0xB0,0xF0}; //confirm int not char***
-int chipAddress[6] = {0b0001000,0b0001001,0b0001010,0b0001011,0b0011000, 0b0011001};
+uint16_t Channels[8] = {0x80,0xC0,0x90,0xD0,0xA0,0xE0,0xB0,0xF0}; //confirm int not char***
+//uint16_t chipAddress[6] = {LTC2309_I2C_ADDRESS_1,LTC2309_I2C_ADDRESS_2,LTC2309_I2C_ADDRESS_3,LTC2309_I2C_ADDRESS_4,LTC2309_I2C_ADDRESS_5,LTC2309_I2C_ADDRESS_6}; 
 int arrayAdcVoltage[20]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 
@@ -79,8 +79,8 @@ void collectData(void) {
   
         ack = 0;
         adc_code = 0;
-        ack |= LTC2309_read(chipAddress[chip], adc_command, &adc_code);   // Throws out last reading
-        ack |= LTC2309_read(chipAddress[chip], adc_command, &adc_code);   // Obtains the current reading and stores to adc_code variable
+ //       ack |= LTC2309_read(chipAddress[chip], adc_command, &adc_code);   // Throws out last reading
+//        ack |= LTC2309_read(chipAddress[chip], adc_command, &adc_code);   // Obtains the current reading and stores to adc_code variable
     
  
         // Convert adc_code to voltage
