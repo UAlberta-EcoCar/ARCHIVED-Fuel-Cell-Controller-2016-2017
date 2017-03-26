@@ -1,6 +1,11 @@
 #ifndef I2C_THREADS_H
 #define I2C_THREADS_H
 
+#define MOTOR_I2C_ADDRESS 0x03
+void motor_command_thread(void const *args);
+int get_motor_current(void);
+int get_batery_volts(void);
+
 #define LED_INDICATOR_ADDRESS 0x01
 void set_indicator_leds_thread(void const *args);
 void set_indicator_leds(int val);

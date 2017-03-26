@@ -22,7 +22,7 @@ DigitalOut status_led(STATUS_LED);
 char * datetime; //pointer to array for storing date/time
 
 int main() {
-    Thread::wait(1000);
+    Thread::wait(2000);
 
     Thread analog_read_t(analog_read_thread,NULL,osPriorityNormal,256*4);
 //    Thread error_checking_t(error_checking_thread,NULL,osPriorityNormal,256*4);
@@ -32,6 +32,7 @@ int main() {
     Thread fan_control_board_t(fan_control_board_thread,NULL,osPriorityNormal,256*4);
     Thread data_link_t(data_link_thread,NULL,osPriorityNormal,256*4);
     Thread ds3231_t(ds3231_thread,NULL,osPriorityNormal,256*4);
+    Thread motor_command_t(motor_command_thread,NULL,osPriorityNormal,256*4);
 
 //    Thread startup_t(startup_thread,NULL,osPriorityNormal,256*4);
 //    Thread charge_t(charge_thread,NULL,osPriorityNormal,256*4);
@@ -45,6 +46,11 @@ int main() {
     while (true)
     {
         status_led = !status_led;
+        //cap_relay(status_led);
+        start_relay(status_led);
+        motor_relay(status_led);
+        //charge_relay(status_led);
+        fcc_relay(1);
 
         set_indicator_leds(1<<count);
         count++;
@@ -63,7 +69,7 @@ int main() {
         serial.printf("Fuel Cell Status is: %d\r\n",get_fc_status());
 
         serial.printf("H2 Status%d\r\n",read_H2_OK());
-
+        serial.printf("Batery Volts%d\r\n",get_batery_volts());
         Thread::wait(500);
     }
 }

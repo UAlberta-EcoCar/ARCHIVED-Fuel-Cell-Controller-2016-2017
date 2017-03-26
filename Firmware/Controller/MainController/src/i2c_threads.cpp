@@ -6,6 +6,31 @@
 
 I2C i2c(I2C_SDA,I2C_SCL);
 
+char RunCommand[] = {0x01,0x05};
+char motor_data[6];
+int motor_current;
+int battery_volts;
+void motor_command_thread(void const *args)
+{
+  while(true)
+  {
+    i2c.write(MOTOR_I2C_ADDRESS<<1,RunCommand,2);
+    //i2c.read(MOTOR_I2C_ADDRESS<<1,motor_data,6);
+    motor_current = motor_data[0] | (motor_data[1]<<8);
+    battery_volts = motor_data[4] | (motor_data[5]<<8);
+
+    Thread::wait(100);
+  }
+}
+int get_motor_current(void)
+{
+  return(motor_current);
+}
+int get_batery_volts(void)
+{
+  return(battery_volts);
+}
+
 char indicator_leds_reg[2];
 void set_indicator_leds_thread(void const *args)
 {
@@ -31,9 +56,11 @@ void fan_control_board_thread(void const *args)
 {
   while(true)
   {
+
     i2c.write(FAN_CONTROL_BOARD_ADDRESS<<1,fan_pwr_status,1);
     Thread::wait(50);
     i2c.read(FAN_CONTROL_BOARD_ADDRESS<<1,fctemp,3);
+
   }
 }
 void set_fan_pwr_status(char val)
@@ -61,16 +88,25 @@ float humidity;
 void sht31_writeCommand(uint16_t cmd);
 void sht31_readtemphum_thread(void const *args)
 {
+
   sht31_writeCommand(SHT31_SOFTRESET);
+
   Thread::wait(10);
 
   while(true)
   {
+
     char readbuffer[6];
 
     sht31_writeCommand(SHT31_MEAS_HIGHREP);
 
-    Thread::wait(50);
+    Thread::wait(100);
+
+    for(uint8_t i = 0;i<6;i++)
+    {
+      readbuffer[i] = 0;
+    }
+
 
     i2c.read(SHT31_DEFAULT_ADDR<<1,readbuffer,6); //i2c returns a signed array
 
@@ -100,6 +136,7 @@ void sht31_readtemphum_thread(void const *args)
     shum /= 0xFFFF;
 
     humidity = shum;
+
   }
 }
 
@@ -131,9 +168,9 @@ void ds3231_thread(void const *args)
   //reads data from rtc
   while(1)
   {
-    //i2c code here
     i2c.write(DS3231_ADDRESS<<1,0,1);
     Thread::wait(5);
+
     i2c.read(DS3231_ADDRESS<<1,ds3231_buffer,19);
 
     //write to string

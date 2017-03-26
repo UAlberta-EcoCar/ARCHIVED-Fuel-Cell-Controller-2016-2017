@@ -1,0 +1,14 @@
+#ifndef COMMANDS_H
+#define COMMANDS_H
+
+
+#define SET_DUTY_CYCLE 0x01
+
+#define DUTY_CYCLE_ZERO 0x00
+#define DUTY_CYCLE_100 0x01
+#define DUTY_CYCLE_200 0x02
+#define DUTY_CYCLE_300 0x03
+#define DUTY_CYCLE_400 0x04
+#define DUTY_CYCLE_500 0x05
+
+#endif
