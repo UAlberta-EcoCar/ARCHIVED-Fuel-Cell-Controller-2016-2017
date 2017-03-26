@@ -109,15 +109,12 @@ ongoing work.
 //                                     //  Pin State
 // LTC2309 I2C Address                 //  AD1       AD0
 
-#define LTC2309_I2C_ADDRESS 0x08      //  LOW       LOW
-// #define LTC2309_I2C_ADDRESS 0x09    //  LOW       Float
-// #define LTC2309_I2C_ADDRESS 0x0A    //  LOW       HIGH
-// #define LTC2309_I2C_ADDRESS 0x0B    //  Float     HIGH
-// #define LTC2309_I2C_ADDRESS 0x18    //  Float     Float
-// #define LTC2309_I2C_ADDRESS 0x19    //  Float     LOW
-// #define LTC2309_I2C_ADDRESS 0x1A    //  HIGH      LOW
-// #define LTC2309_I2C_ADDRESS 0x1B    //  HIGH      Float
-// #define LTC2309_I2C_ADDRESS 0x14    //  High      HIGH
+#define LTC2309_I2C_ADDRESS_1 0x08    //  LOW       LOW
+#define LTC2309_I2C_ADDRESS_2 0x09   `//  LOW       Float
+#define LTC2309_I2C_ADDRESS_3 0x0A    //  LOW       HIGH
+#define LTC2309_I2C_ADDRESS_4 0x0B    //  Float     HIGH
+#define LTC2309_I2C_ADDRESS_5 0x18    //  Float     Float
+#define LTC2309_I2C_ADDRESS_6 0x19    //  Float     LOW
 //!@}
 
 //! @name Single-Ended Channel Configuration
