@@ -40,9 +40,9 @@ void analog_read_thread(void const *args)
   Thread::wait(5);
   while(true)
   {
-    capvolt_v = capvolt;
+    capvolt_v = capvolt*48.067f;
     fccurr_v = fccurr;
-    fcvolt_v = fcvolt;
+    fcvolt_v = fcvolt*48.067f;
     capcurr_v = capcurr;
     fcpres_v = fcpres;
 

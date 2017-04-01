@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <Wire.h>
+#include <StackArray.h>
 
 #include "Pin_Defines.h"
 #include "commands.h"
@@ -11,6 +12,18 @@ uint8_t find_c(char *
 char read_data[25];
 
 uint32_t timer = 0;
+
+char c;
+StackArray char stack;
+int ParseReply(char * str)
+{
+  //empty stack
+  while(~stack.isEmpty())
+  {
+    c = stack.pop();
+  }
+  
+}
 
 void setup() {
   Serial.begin(115200);
@@ -45,10 +58,37 @@ void loop() {
         case DUTY_CYCLE_200 :
           Serial.print("!G 1 200\r");
           break;
+        case DUTY_CYCLE_300 :
+          Serial.print("!G 1 300\r");
+          break;
+        case DUTY_CYCLE_400 :
+          Serial.print("!G 1 400\r");
+          break;
         case DUTY_CYCLE_500 :
           Serial.print("!G 1 500\r");
           break;
+        case DUTY_CYCLE_600 :
+          Serial.print("!G 1 600\r");
+          break;
+        case DUTY_CYCLE_700 :
+          Serial.print("!G 1 700\r");
+          break;
+        case DUTY_CYCLE_800 :
+          Serial.print("!G 1 800\r");
+          break;
+        case DUTY_CYCLE_900 :
+          Serial.print("!G 1 900\r");
+          break;
+        case DUTY_CYCLE_1000 :
+          Serial.print("!G 1 1000\r");
+          break;
       }
+      case EMERGENCY_STOP:
+        Serial.print("!EX\r");
+        break;
+      case EMERGENCY_STOP_RELEASE:
+        Serial.print("!MG\r");
+        break;
       read_data[1] = 0;
       break;
   }
@@ -60,40 +100,21 @@ void loop() {
     while(Serial.available() > 0){
       char t = Serial.read(); 
     }
+    //read motor current
+    Serial.print("?A 1\r");
+    //read battery currnet
+    Serial.print("?BA 1\r");
+    //read internal volts
+    Serial.print("?V 1\r");
     //read battery volts
     Serial.print("?V 2\r");
-    x = 0;
-    //read string response from controller
-    while(Serial.available() > 0){
-      read_buff[x] = Serial.read();
-      x++;
-    }
-    while(x < READ_BUFF_SIZE)
-    {
-      read_buff[x] = NULL;
-      x++;
-    }
-//    x = 0;
-//    while(read_buff[x] != '=')
-//    {
-//      x++;
-//    }
-//    x++;
-//    //x++;
-//    uint8_t y = 0;
-//    while(read_buff[x] != NULL)
-//    {
-//      secondary_buff[y] = read_buff[x];
-//      x++;
-//      y++;
-//    }
-//    while(y < SECONDARY_BUFF_SIZE)
-//    {
-//      secondary_buff[y] = NULL;
-//      y++;
-//    }
-//    String str = String(secondary_buff);
-//    battery_volts =  str.toInt();
+    //read encoder rpm
+    Serial.print("?S 1\r");
+    //read encoder count
+    Serial.print("?C 1\r");
+    //read time in seconds
+    Serial.print("?TM 1\r");
+    
     timer = millis();
   }
 }

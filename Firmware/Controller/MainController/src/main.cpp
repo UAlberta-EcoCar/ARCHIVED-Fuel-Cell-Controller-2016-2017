@@ -16,7 +16,7 @@
 #include "multiplexor.h"
 #include "digital_io.h"
 
-USBSerial serial;
+//USBSerial serial;
 DigitalOut status_led(STATUS_LED);
 
 char * datetime; //pointer to array for storing date/time
@@ -47,7 +47,7 @@ int main() {
     {
         status_led = !status_led;
         //cap_relay(status_led);
-        start_relay(status_led);
+        //start_relay(status_led);
         motor_relay(status_led);
         //charge_relay(status_led);
         fcc_relay(1);
@@ -59,17 +59,17 @@ int main() {
           count=0;
         }
 
-        serial.printf("Hello World!\r\n");
-
-        serial.printf("The time is: %s",get_time());
-
-        serial.printf("\r\n");
-        serial.printf("The Temp Outside is: %f\r\n",sht31_readTemperature());
-        serial.printf("The Humidity Outside is: %f\r\n",sht31_readHumidity());
-        serial.printf("Fuel Cell Status is: %d\r\n",get_fc_status());
-
-        serial.printf("H2 Status%d\r\n",read_H2_OK());
-        serial.printf("Batery Volts%d\r\n",get_batery_volts());
-        Thread::wait(500);
+        // serial.printf("Hello World!\r\n");
+        //
+        // serial.printf("The time is: %s",get_time());
+        //
+        // serial.printf("\r\n");
+        // serial.printf("The Temp Outside is: %f\r\n",sht31_readTemperature());
+        // serial.printf("The Humidity Outside is: %f\r\n",sht31_readHumidity());
+        // serial.printf("Fuel Cell Status is: %d\r\n",get_fc_status());
+        //
+        // serial.printf("H2 Status%d\r\n",read_H2_OK());
+        // serial.printf("Batery Volts%d\r\n",get_batery_volts());
+        Thread::wait(3000);
     }
 }

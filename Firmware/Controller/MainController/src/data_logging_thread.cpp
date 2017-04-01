@@ -35,12 +35,13 @@ void data_logging_thread(void const *args)
     ol_serial.printf("%f,",get_capvolt());
     ol_serial.printf("%f,",get_fcvolt());
     ol_serial.printf("%f,",get_capcurr());
+    ol_serial.printf("%f,",get_fccurr());
     ol_serial.printf("%f,",get_fcpres());
     ol_serial.printf("%f,",get_fc_coulumbs());
     ol_serial.printf("%f,",get_fc_joules());
     ol_serial.printf("%f,",get_cap_coulumbs());
     ol_serial.printf("%f,",get_cap_joules());
     ol_serial.printf("\r\n");
-    Thread::wait(50);
+    Thread::wait(10);
   }
 }
