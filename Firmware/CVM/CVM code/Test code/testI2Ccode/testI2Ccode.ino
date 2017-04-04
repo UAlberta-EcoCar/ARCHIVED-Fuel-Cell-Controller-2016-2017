@@ -34,24 +34,7 @@ digitalWrite(sigTwo, LOW);
  
 void loop() 
 {
- collectData(); //call function collectData
-
-//if(CellVoltages[] < 0.1 ) 
-//         {
-//          digitalWrite(sigTwo, HIGH);   // signals that a cvm probe is disconnected 
-//             }
-//
-//
-//if ((CellVoltages > 0.1) && (CellVoltages < 0.5)) //purge signal
-//    {
-//           digitalWrite(sigOne, HIGH);  // sends signal to FCC 
-//           delay (2000);   
-//           digitalWrite(sigOne, LOW);// turn off signal 
-//           delay (2000);   
-//           }
-//           //signals working!!
-//
-
+collectData(); //call function collectData
 
 writeData();  //call function writeData
 
@@ -60,18 +43,18 @@ writeData();  //call function writeData
 
 void collectData(void) {
 
+  int CellN = 0;
+  
     for (int chip=0; chip< 6; chip++) 
   {
-  int CellN = 0;
  
   for (int Channel_number = 0; Channel_number < 8; Channel_number++) 
     {
-          
+        AverageAdcVoltage = 0;
+        
         for (int N = 0; N<20; N ++)
         {
-          
-            AverageAdcVoltage = 0;
-    
+         
             //Read Channel # in Single-Ended Unipolar mode
             adc_command = Channels[Channel_number] | LTC2309_UNIPOLAR_MODE;        // Set to read channel #
        
@@ -81,7 +64,7 @@ void collectData(void) {
  
             // Convert adc_code to voltage
             adc_voltage = LTC2309_code_to_voltage(adc_code, 2.5f, LTC2309_UNIPOLAR_MODE); //accuracy changes as you change internal ref... maybe try and change it if readings are off
-            adc_voltage = (adc_voltage);
+            adc_voltage = (adc_voltage* 1.5 ); //voltage correction..change in future adc_voltage = (adc_voltage* correct(N) ) correct having the designated correction factors
            
             
 
@@ -91,42 +74,231 @@ void collectData(void) {
            
           }
           
-           CellVoltages[CellN] = (AverageAdcVoltage)/20;
+          CellVoltages[CellN] = ((AverageAdcVoltage)/20);
           CellN =(CellN + 1);
-         
-          
+      
     }
   }
      
 }
+void writeData(void) {
+
+Serial.print("\n");
+Serial.print ("Chip 0x08 ");
+ Serial.print ("RED: ");
+ Serial.print(CellVoltages[0]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("PINK: ");
+ Serial.print(CellVoltages[1]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("LIGHT BLUE: ");
+ Serial.print(CellVoltages[2]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT GREEN: ");
+ Serial.print(CellVoltages[3]);
+ delay (600);
+ Serial.print( ',' ); 
+ Serial.print ("BLUE: ");
+ Serial.print(CellVoltages[4]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("GREEN: ");
+ Serial.print(CellVoltages[5]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT ORANGE: ");
+ Serial.print(CellVoltages[6]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("ORANGE: ");
+ Serial.print(CellVoltages[7]);
+ delay (600);
+ Serial.print( ',' ); 
 
 
-void writeData(void) { 
+ Serial.print("\n");
+ Serial.print ("Chip 0x09 ");
+ Serial.print ("RED: ");
+ Serial.print(CellVoltages[8]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("PINK: ");
+ Serial.print(CellVoltages[9]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("LIGHT BLUE: ");
+ Serial.print(CellVoltages[10]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT GREEN: ");
+ Serial.print(CellVoltages[11]);
+ delay (600);
+ Serial.print( ',' ); 
+ Serial.print ("BLUE: ");
+ Serial.print(CellVoltages[12]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("GREEN: ");
+ Serial.print(CellVoltages[13]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT ORANGE: ");
+ Serial.print(CellVoltages[14]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("ORANGE: ");
+ Serial.print(CellVoltages[15]);
+ delay (600);
+ Serial.print( ',' ); 
 
- 
-  for(int count = 0; count < 46; count++ )  { 
-    
-         for (int Read = 0;  Read< 6; Read++ )   
-          {
-             Serial.print( "Chip Number" );
-              Serial.print( Read );
-              Serial.print( ':' ); 
-              delay (600);
-              
-                    for (int values= 0; values < 8; values++)
-                       {
-                         Serial.print( "Chan # " );
-                         Serial.print( values );
-                         Serial.print( " : " );
-                         delay (600);
-                         Serial.print( CellVoltages[count] ); 
-                         Serial.print( ',' ); 
-                         delay (600);
-                        }
-   
-    }
-  }
+
+
+ Serial.print("\n");
+ Serial.print ("Chip 0x0A ");
+ Serial.print ("RED: ");
+ Serial.print(CellVoltages[16]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("PINK: ");
+ Serial.print(CellVoltages[17]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT BLUE: ");
+ Serial.print(CellVoltages[18]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT GREEN: ");
+ Serial.print(CellVoltages[19]);
+ delay (600);
+ Serial.print( ',' ); 
+ Serial.print ("BLUE: ");
+ Serial.print(CellVoltages[20]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("GREEN: ");
+ Serial.print(CellVoltages[21]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT ORANGE: ");
+ Serial.print(CellVoltages[22]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("ORANGE: ");
+ Serial.print(CellVoltages[23]);
+ delay (600);
+ Serial.print( ',' ); 
+
+ Serial.print("\n");
+Serial.print ("Chip 0x0B ");
+ Serial.print ("RED: ");
+ Serial.print(CellVoltages[24]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("PINK: ");
+ Serial.print(CellVoltages[25]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("LIGHT BLUE: ");
+ Serial.print(CellVoltages[26]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT GREEN: ");
+ Serial.print(CellVoltages[27]);
+ delay (600);
+ Serial.print( ',' ); 
+ Serial.print ("BLUE: ");
+ Serial.print(CellVoltages[28]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("GREEN: ");
+ Serial.print(CellVoltages[29]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT ORANGE: ");
+ Serial.print(CellVoltages[30]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("ORANGE: ");
+ Serial.print(CellVoltages[31]);
+ delay (600);
+ Serial.print( ',' ); 
+
+ Serial.print("\n");
+ Serial.print ("Chip 0x18 ");
+ Serial.print ("RED: ");
+ Serial.print(CellVoltages[32]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("PINK: ");
+ Serial.print(CellVoltages[33]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("LIGHT BLUE: ");
+ Serial.print(CellVoltages[34]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT GREEN: ");
+ Serial.print(CellVoltages[35]);
+ delay (600);
+ Serial.print( ',' ); 
+ Serial.print ("BLUE: ");
+ Serial.print(CellVoltages[36]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("GREEN: ");
+ Serial.print(CellVoltages[37]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT ORANGE: ");
+ Serial.print(CellVoltages[38]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("ORANGE: ");
+ Serial.print(CellVoltages[39]);
+ delay (600);
+ Serial.print( ',' ); 
+
+
+ Serial.print("\n");
+ Serial.print ("Chip 0x19 ");
+ Serial.print ("RED : ");
+ Serial.print(CellVoltages[40]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("PINK: ");
+ Serial.print(CellVoltages[41]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("LIGHT BLUE: ");
+ Serial.print(CellVoltages[42]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT GREEN: ");
+ Serial.print(CellVoltages[43]);
+ delay (600);
+ Serial.print( ',' ); 
+ Serial.print ("BLUE: ");
+ Serial.print(CellVoltages[44]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("GREEN: ");
+ Serial.print(CellVoltages[45]);
+ Serial.print( ',' ); 
+ delay (600);
+ Serial.print ("LIGHT ORANGE: ");
+ Serial.print(CellVoltages[46]);
+ Serial.print( ',' ); 
+ delay (600);
+  Serial.print ("ORANGE: ");
+ Serial.print(CellVoltages[47]);
+ delay (600);
+ Serial.print( ',' ); 
 }
+ 
+
 
 
 
