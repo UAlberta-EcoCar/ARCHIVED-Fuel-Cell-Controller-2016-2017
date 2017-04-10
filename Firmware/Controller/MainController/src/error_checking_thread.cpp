@@ -7,13 +7,13 @@
 #include "FC_Status.h"
 #include "multiplexor.h"
 
-#define OVER_VOLT 1
-#define UNDER_VOLT 2
-#define OVER_PRES 3
-#define UNDER_PRES 4
-#define OVER_CURR 5
-#define OVER_TEMP 6
-#define H2_ALARM 7
+#define OVER_VOLT 10
+#define UNDER_VOLT 11
+#define OVER_PRES 6
+#define UNDER_PRES 7
+#define OVER_CURR 8
+#define OVER_TEMP 5
+#define H2_ALARM 3
 
 char error_state;
 
@@ -22,6 +22,8 @@ Timer high_temp_timer;
 
 void error_checking_thread(void const *args)
 {
+  error_state = 0;
+  
   while(get_fc_status()==IDLE_STATE)
   {
     Thread::wait(10);
@@ -32,14 +34,15 @@ void error_checking_thread(void const *args)
 
   while(get_fc_status()!=IDLE_STATE)
   {
-    if(get_fcvolt()>46)
+    if(get_fcvolt()>(1.1*28))
     {
       error_state|=(1<<OVER_VOLT);
     }
-    if(get_capvolt()>46)
+    if(get_capvolt()>(16*2))
     {
       error_state|=(1<<OVER_VOLT);
     }
+
     if(get_fcpres()>8)
     {
       error_state|=(1<<OVER_PRES);

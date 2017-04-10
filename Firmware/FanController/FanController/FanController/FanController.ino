@@ -2,6 +2,7 @@
 #include <Wire.h>
 
 #include "Pin_Defines.h"
+#include "ThermistorLookup.h"
 
 #define SLAVE_ADDRESS 0x02
 
@@ -35,6 +36,23 @@ void setup() {
 void loop() {
   temp[0] = analogRead(THERM1);
   temp[1] = analogRead(THERM2);
+
+  float temperature = ((float)temp[0] + (float)temp[1])/2;
+  temperature = therm_lookup(temperature/5.0f);
+
+  if(temperature>32.0f)
+  {
+    analogWrite(PWM_1,255);
+    analogWrite(PWM_2,255);
+    analogWrite(PWM_3,255);
+  }
+  else
+  {
+    analogWrite(PWM_1,30);
+    analogWrite(PWM_2,30);
+    analogWrite(PWM_3,30);
+  }
+
   if(Reg)
   {
     digitalWrite(13,HIGH);
@@ -82,4 +100,3 @@ void receiveEvent(int bytesReceived)
   Serial.println("data received");
   Serial.println(Reg);
 }
-

@@ -15,6 +15,7 @@ void shutdown_thread(void const *args)
   }
 
   //start shutdown timer (allows for few seconds of data logging before powering down controller)
+  shutdown_timer.reset();
   shutdown_timer.start();
 
   while(1)
@@ -26,9 +27,14 @@ void shutdown_thread(void const *args)
     charge_relay(0);
     cap_relay(0);
     Thread::wait(10);
+    shutdown_timer.stop();
     if(shutdown_timer.read()>3)
     {
-      fcc_relay(0);
+      //fcc_relay(0);
+    }
+    else
+    {
+      shutdown_timer.start();
     }
   }
 }

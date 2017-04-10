@@ -6,7 +6,7 @@
 
 I2C i2c(I2C_SDA,I2C_SCL);
 
-char RunCommand[] = {0x01,0x05};
+char RunCommand[] = {0x04,0x00};
 char motor_data[6];
 int motor_current;
 int battery_volts;
@@ -14,12 +14,17 @@ void motor_command_thread(void const *args)
 {
   while(true)
   {
+    RunCommand[0] = 0x04;
     i2c.write(MOTOR_I2C_ADDRESS<<1,RunCommand,2);
     //i2c.read(MOTOR_I2C_ADDRESS<<1,motor_data,6);
-    motor_current = motor_data[0] | (motor_data[1]<<8);
-    battery_volts = motor_data[4] | (motor_data[5]<<8);
+    // motor_current = motor_data[0] | (motor_data[1]<<8);
+    // battery_volts = motor_data[4] | (motor_data[5]<<8);
 
-    Thread::wait(100);
+    Thread::wait(1000);
+
+    RunCommand[0] = 0x05;
+    i2c.write(MOTOR_I2C_ADDRESS<<1,RunCommand,2);
+    Thread::wait(1000);
   }
 }
 int get_motor_current(void)
@@ -37,7 +42,7 @@ void set_indicator_leds_thread(void const *args)
   while(true)
   {
     i2c.write(LED_INDICATOR_ADDRESS<<1,indicator_leds_reg,2);
-    Thread::wait(100);
+    Thread::wait(300);
   }
 }
 int get_indicator_leds(void)
@@ -100,7 +105,7 @@ void sht31_readtemphum_thread(void const *args)
 
     sht31_writeCommand(SHT31_MEAS_HIGHREP);
 
-    Thread::wait(100);
+    Thread::wait(300);
 
     for(uint8_t i = 0;i<6;i++)
     {
@@ -194,7 +199,7 @@ void ds3231_thread(void const *args)
     now[10] = ((ds3231_buffer[6]&0xf0)>>4) + 48;
 
     now[12] = 0; //terminated with null char
-    Thread::wait(250);
+    Thread::wait(300);
   }
 }
 char * get_time(void)

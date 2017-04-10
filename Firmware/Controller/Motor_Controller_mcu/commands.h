@@ -18,6 +18,8 @@
 
 #define EMERGENCY_STOP 0x02
 #define EMERGENCY_STOP_RELEASE 0x03
-
+#define START_SCRIPT 0x04
+#define STOP_SCRIPT 0x05
+#define RESTART_SCRIPT 0x06
 
 #endif
