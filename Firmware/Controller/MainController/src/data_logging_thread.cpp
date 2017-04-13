@@ -9,10 +9,14 @@
 
 Serial ol_serial(OL_TX,OL_RX,115200);
 
+Timer deltatimer; //will overflow ever 30 minutes
+
 void data_logging_thread(void const *args)
 {
   Thread::wait(500);
+  deltatimer.start();
   ol_serial.printf("time,");
+  ol_serial.printf("deltat,");
   ol_serial.printf("fc_status,");
   ol_serial.printf("ExternalTemp,");
   ol_serial.printf("ExternalHumidity,");
@@ -29,6 +33,10 @@ void data_logging_thread(void const *args)
   while(true)
   {
     ol_serial.printf("%s,",get_time());
+    deltatimer.stop();
+    ol_serial.printf("%s,",deltatimer.read_ms());
+    deltatimer.reset();
+    deltatimer.start();
     ol_serial.printf("%d,",get_fc_status());
     ol_serial.printf("%f,",sht31_readTemperature());
     ol_serial.printf("%f,",sht31_readHumidity());
@@ -42,6 +50,6 @@ void data_logging_thread(void const *args)
     ol_serial.printf("%f,",get_cap_coulumbs());
     ol_serial.printf("%f,",get_cap_joules());
     ol_serial.printf("\r\n");
-    Thread::wait(10);
+    Thread::wait(200);
   }
 }

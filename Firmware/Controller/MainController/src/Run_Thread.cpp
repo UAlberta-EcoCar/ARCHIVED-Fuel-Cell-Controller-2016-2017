@@ -37,26 +37,28 @@ void run_thread(void const *args)
       coulumb_count_at_last_purge = get_fc_coulumbs();
     }
 
-    if(read_M_SIG_1()|read_M_SIG_2())
-    {
-      set_fan_pwr_status(0b111); //turn fans on
-      while(~get_fan_status()) //wait for fans to turn on
-      {
-        Thread::wait(200);
-      }
-      Thread::wait(500);
-      //give power to the motor_relay
-      motor_relay(1);
-    }
-    else if(get_fcvolt()>VOLTAGE_THRESHOLD)
-    {
-      motor_relay(0); //turn motor off
-      set_fan_pwr_status(0);
-    }
-    else
-    {
-      set_fan_pwr_status(0b111);
-    }
+    set_fan_pwr_status(0b111); //turn fans on
+
+    // if(read_M_SIG_1()|read_M_SIG_2())
+    // {
+    //   set_fan_pwr_status(0b111); //turn fans on
+    //   while(~get_fan_status()) //wait for fans to turn on
+    //   {
+    //     Thread::wait(200);
+    //   }
+    //   Thread::wait(500);
+    //   //give power to the motor_relay
+    //   motor_relay(1);
+    // }
+    // else if(get_fcvolt()>VOLTAGE_THRESHOLD)
+    // {
+    //   motor_relay(0); //turn motor off
+    //   set_fan_pwr_status(0);
+    // }
+    // else
+    // {
+    //   set_fan_pwr_status(0b111);
+    // }
 
     Thread::wait(20);
   }

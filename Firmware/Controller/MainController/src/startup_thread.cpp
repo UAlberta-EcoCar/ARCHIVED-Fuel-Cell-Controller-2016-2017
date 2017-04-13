@@ -22,7 +22,7 @@
 // Values to reach on start up (pretty much made up at this point)
 #define FC_PRES1 5
 #define FC_PRES2 4
-#define FC_VOLT 35
+#define FC_VOLT 24
 
 void startup_thread(void const *args){
 

@@ -6,83 +6,34 @@
 #include "analog_read_thread.h"
 #include "i2c_threads.h"
 #include "FC_Status.h"
+#include "error_checking_thread.h"
 
 //This thread communicates with a other systems over CAN Bus or BlueTooth
 
 Serial link_serial(LINK_TX,LINK_RX,115200);
 
-//Functions for formatting as json
-void json_start(void)
-{
-  link_serial.printf("{");
-}
 
-void json_datafloat(char * name,float value,char last)
-{
-  if(last)
-  {
-    link_serial.printf("\"%s\":%f",name,value); //no comma on line
-  }
-  else
-  {
-    link_serial.printf("\"%s\":%f,",name,value); //comma on line
-  }
-}
-
-void json_dataint(char * name,int value,char last)
-{
-  if(last)
-  {
-    link_serial.printf("\"%s\":%d",name,value); //no comma on line
-  }
-  else
-  {
-    link_serial.printf("\"%s\":%d,",name,value); //comma on line
-  }
-}
-
-void json_datastring(char * name,char * value,char last)
-{
-  if(last)
-  {
-    link_serial.printf("\"%s\":\"%s\"",name,value); //no comma on line
-  }
-  else
-  {
-    link_serial.printf("\"%s\":\"%s\",",name,value); //comma on line
-  }
-}
-
-void json_end(void)
-{
-  link_serial.printf("}\n");
-}
-
-
-char count;
 
 void data_link_thread(void const *args)
 {
   while(true)
   {
-    json_start();
+    link_serial.printf("{\"speed\":");
+    link_serial.printf("%f",sht31_readTemperature());
+    link_serial.printf(",\"fc_voltage\":");
+    link_serial.printf("%f",get_fcvolt());
+    link_serial.printf(",\"motor_current\":");
+    link_serial.printf("%f",get_fccurr());
+    link_serial.printf(",\"fc_alarm_code\":");
+    link_serial.printf("%d",get_error_state());
+    link_serial.printf(",\"fc_state\":");
+    link_serial.printf("%d",get_fc_status());
+    link_serial.printf(",\"fc_temp\":");
+    link_serial.printf("%d",sht31_readTemperature());
+    //link_serial.printf(",\"efficiency\":");
+    //link_serial.printf("%d",sht31_readHumidity());
+    link_serial.printf("}\n");
 
-    json_datastring("time",get_time(),0);
-    json_dataint("status",get_fc_status(),0);
-    json_datafloat("ExternalTemp",sht31_readTemperature(),0);
-    json_datafloat("ExternalHumidity",sht31_readHumidity(),0);
-    json_datafloat("CapVolt",get_capvolt(),0);
-    json_datafloat("FCVolt",get_fcvolt(),0);
-    json_datafloat("CapCurr",get_capcurr(),0);
-    json_datafloat("FCCurr",get_fccurr(),0);
-    json_datafloat("FCPres",get_fcpres(),0);
-    json_datafloat("FCCoulumbs",get_fc_coulumbs(),0);
-    json_datafloat("FCJoules",get_fc_joules(),0);
-    json_datafloat("CapCoulumbs",get_cap_coulumbs(),0);
-    json_datafloat("CapJoules",get_cap_joules(),1);
-
-    json_end();
-
-    Thread::wait(500);
+    Thread::wait(1000);
   }
 }

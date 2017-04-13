@@ -1,6 +1,7 @@
 #include "mbed.h"
 #include "digital_io.h"
 #include "Pin_Defines.h"
+#include "analog_read_thread.h"
 
 //functions for accessing digital io functions from other locations
 
@@ -24,7 +25,13 @@ void purge_valve(bool val)
 
 void start_relay(bool val)
 {
-  start_r = val;
+  if(charge_r == 0)
+  {
+    if(cap_r == 0)
+    {
+      start_r = val;
+    }
+  }
 }
 
 void motor_relay(bool val)
@@ -34,12 +41,27 @@ void motor_relay(bool val)
 
 void charge_relay(bool val)
 {
-  charge_r = val;
+  if(start_r == 0)
+  {
+    if(cap_r == 0)
+    {
+      charge_r = val;
+    }
+  }
 }
 
 void cap_relay(bool val)
 {
-  cap_r = val;
+  if(start_r == 0)
+  {
+    if(charge_r == 0)
+    {
+      if(get_capvolt()>15)
+      {
+        cap_r = val;
+      }
+    }
+  }
 }
 
 void fcc_relay(bool val)

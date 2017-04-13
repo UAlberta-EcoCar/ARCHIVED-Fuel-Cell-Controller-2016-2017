@@ -1,35 +1,20 @@
 #include <Arduino.h>
 #include <Wire.h>
-#include <StackArray.h>
 
 #include "Pin_Defines.h"
 #include "commands.h"
 
 #define SLAVE_ADDRESS 0x03
 
-uint8_t find_c(char * 
-
 char read_data[25];
 
 uint32_t timer = 0;
 
-char c;
-StackArray char stack;
-int ParseReply(char * str)
-{
-  //empty stack
-  while(~stack.isEmpty())
-  {
-    c = stack.pop();
-  }
-  
-}
-
 void setup() {
   Serial.begin(115200);
-  Wire.begin(SLAVE_ADDRESS);
-  Wire.onRequest(requestEvent);
-  Wire.onReceive(receiveEvent);
+  //Wire.begin(SLAVE_ADDRESS);
+  //Wire.onRequest(requestEvent);
+  //Wire.onReceive(receiveEvent);
   timer = millis();
 }
 
@@ -48,7 +33,10 @@ char secondary_buff[SECONDARY_BUFF_SIZE];
 uint8_t x = 0;
 
 void loop() {
-
+  read_data[0] = 0x01;
+  read_data[1] = 0x03;
+  delay(50);
+  
   switch(read_data[0]) {
     case SET_DUTY_CYCLE :
       switch(read_data[1]) {
@@ -89,6 +77,15 @@ void loop() {
       case EMERGENCY_STOP_RELEASE:
         Serial.print("!MG\r");
         break;
+      case START_SCRIPT:
+        Serial.print("!R 0\r");
+        break;
+      case STOP_SCRIPT:
+        Serial.print("!R 1\r");
+        break;
+      case RESTART_SCRIPT:
+        Serial.print("!R 2\r");
+        break;
       read_data[1] = 0;
       break;
   }
@@ -97,23 +94,23 @@ void loop() {
   if (millis() - timer > 250)
   {
     //flush serial buffer
-    while(Serial.available() > 0){
-      char t = Serial.read(); 
-    }
-    //read motor current
-    Serial.print("?A 1\r");
-    //read battery currnet
-    Serial.print("?BA 1\r");
-    //read internal volts
-    Serial.print("?V 1\r");
-    //read battery volts
-    Serial.print("?V 2\r");
-    //read encoder rpm
-    Serial.print("?S 1\r");
-    //read encoder count
-    Serial.print("?C 1\r");
-    //read time in seconds
-    Serial.print("?TM 1\r");
+//    while(Serial.available() > 0){
+//      char t = Serial.read(); 
+//    }
+//    //read motor current
+//    Serial.print("?A 1\r");
+//    //read battery currnet
+//    Serial.print("?BA 1\r");
+//    //read internal volts
+//    Serial.print("?V 1\r");
+//    //read battery volts
+//    Serial.print("?V 2\r");
+//    //read encoder rpm
+//    Serial.print("?S 1\r");
+//    //read encoder count
+//    Serial.print("?C 1\r");
+//    //read time in seconds
+//    Serial.print("?TM 1\r");
     
     timer = millis();
   }

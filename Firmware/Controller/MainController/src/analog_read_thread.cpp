@@ -40,10 +40,18 @@ void analog_read_thread(void const *args)
   Thread::wait(5);
   while(true)
   {
-    capvolt_v = capvolt*48.067f;
-    fccurr_v = fccurr;
-    fcvolt_v = fcvolt*48.067f;
-    capcurr_v = capcurr;
+    capvolt_v = capvolt*45.768f+0.2715f;
+    if(fccurr >0.338)
+    {
+      fccurr_v = 48.329f*fccurr-15.464f;
+    }
+    else
+    {
+      fccurr_v = 0.5f;
+    }
+
+    fcvolt_v = fcvolt*45.76f+0.2715f;
+    capcurr_v = capcurr*20.721f-3.6225f;
     fcpres_v = fcpres;
 
     float dt = t.read();
@@ -55,6 +63,6 @@ void analog_read_thread(void const *args)
     cap_coulumbs_v += capcurr_v*dt;
     cap_joules_v += capcurr_v*capvolt_v*dt;
 
-    Thread::wait(5);
+    Thread::wait(50);
   }
 }

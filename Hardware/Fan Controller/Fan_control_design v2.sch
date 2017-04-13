@@ -142,7 +142,7 @@
 <layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
-<schematic xreflabel="Э" xrefpart="/%S.%C%R">
+<schematic xreflabel="" xrefpart="/%S.%C%R">
 <libraries>
 <library name="frames">
 <description>&lt;b&gt;Frames for Sheet and Layout&lt;/b&gt;</description>
