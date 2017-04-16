@@ -45,18 +45,17 @@ int main() {
    Thread run_t(run_thread,NULL,osPriorityNormal,256*4);
    Thread shutdown_t(shutdown_thread,NULL,osPriorityNormal,256*4);
 
-    //set_fc_status(START_STATE);
-
     fcc_relay(1);
-    motor_relay(1);
-    
+
+    Thread::wait(1000);
+    set_fc_status(START_STATE);
+
     uint8_t count = 0;
 
     while (true)
     {
         status_led = !status_led;
 
-        set_indicator_leds(1<<count);
         count++;
         if(count>11)
         {
@@ -74,6 +73,6 @@ int main() {
         // serial.printf("Fuel Cell Voltage is: %f\r\n",get_fcvolt());
         // serial.printf("Fuel Cell Current is: %f\r\n",get_fccurr());
         // serial.printf("H2 Status%d\r\n",read_H2_OK());
-        Thread::wait(5000);
+        Thread::wait(500);
     }
 }

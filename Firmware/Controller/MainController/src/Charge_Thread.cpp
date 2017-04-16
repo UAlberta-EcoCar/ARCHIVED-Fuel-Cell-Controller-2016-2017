@@ -5,6 +5,7 @@
 #include "analog_read_thread.h"
 #include "Charge_Thread.h"
 #include "digital_io.h"
+#include "i2c_threads.h"
 
 void charge_thread(void const *args)
 {
@@ -12,6 +13,8 @@ void charge_thread(void const *args)
   {
     Thread::wait(500);
   }
+
+  set_indicator_leds(1<<1);
 
   //close cap charge relay
   charge_relay(1);
@@ -31,6 +34,8 @@ void charge_thread(void const *args)
   {
     Thread::wait(50);
   }
+
+  Thread::wait(500);
 
   set_fc_status(RUN_STATE);
 }

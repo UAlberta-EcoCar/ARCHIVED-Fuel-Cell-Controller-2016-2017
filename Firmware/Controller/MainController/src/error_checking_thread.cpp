@@ -23,7 +23,7 @@ Timer high_temp_timer;
 void error_checking_thread(void const *args)
 {
   error_state = 0;
-  
+
   while(get_fc_status()==IDLE_STATE)
   {
     Thread::wait(10);
@@ -72,11 +72,11 @@ void error_checking_thread(void const *args)
     {
       if(high_temp_timer.read()>5)
       {
-        error_state|=(1<<OVER_TEMP);
+        error_state|=0;//(1<<OVER_TEMP);
       }
     }
 
-    if(~read_H2_OK())
+    if(read_H2_OK()==0)
     {
       error_state|=(1<<H2_ALARM);
     }

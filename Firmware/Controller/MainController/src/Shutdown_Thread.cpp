@@ -4,6 +4,7 @@
 #include "Shutdown_Thread.h"
 #include "digital_io.h"
 #include "FC_Status.h"
+#include "i2c_threads.h"
 
 Timer shutdown_timer;
 
@@ -20,13 +21,14 @@ void shutdown_thread(void const *args)
 
   while(1)
   {
+    set_indicator_leds(1<<8);
     supply_valve(0);
     purge_valve(0);
     start_relay(0);
     motor_relay(0);
     charge_relay(0);
     cap_relay(0);
-    Thread::wait(10);
+    Thread::wait(20);
     shutdown_timer.stop();
     if(shutdown_timer.read()>3)
     {

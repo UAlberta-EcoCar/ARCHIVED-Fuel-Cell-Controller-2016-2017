@@ -1,10 +1,10 @@
 #ifndef RUN_THREAD_H
 #define RUN_THREAD_H
 
-#define PURGE_THRES 2300
+#define PURGE_THRES 2300.0f
 #define PURGE_TIME 200
 
-#define VOLTAGE_THRESHOLD 35
+#define VOLTAGE_THRESHOLD 35.0f
 
 void run_thread(void const *args);
 

@@ -21,6 +21,11 @@ void run_thread(void const *args)
     Thread::wait(200);
   }
 
+  set_indicator_leds(1<<2);
+
+  //close motor relay
+  motor_relay(1);
+
   while(1)
   {
     if(get_fc_status()==STOP_STATE)
@@ -28,7 +33,7 @@ void run_thread(void const *args)
       Thread::wait(1000);
     }
 
-    if(get_fc_coulumbs()-coulumb_count_at_last_purge>2300)
+    if(get_fc_coulumbs()-coulumb_count_at_last_purge>2300.0f)
     {
       purge_valve(1);
       Thread::wait(200);
