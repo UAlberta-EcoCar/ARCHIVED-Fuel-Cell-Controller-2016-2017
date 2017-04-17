@@ -51,8 +51,8 @@ void analog_read_thread(void const *args)
     }
 
     fcvolt_v = fcvolt*45.76f+0.2715f;
-    capcurr_v = capcurr*20.721f-3.6225f;
-    fcpres_v = fcpres;
+    capcurr_v = capcurr;
+    fcpres_v = 5.0f;//fcpres;
 
     float dt = t.read();
     t.reset();

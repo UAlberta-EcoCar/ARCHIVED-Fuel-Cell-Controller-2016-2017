@@ -18,11 +18,12 @@
 #include "startup_thread.h"
 #include "FC_Status.h"
 #include "digital_io.h"
+#include "i2c_threads.h"
 
 // Values to reach on start up (pretty much made up at this point)
-#define FC_PRES1 5
-#define FC_PRES2 4
-#define FC_VOLT 24
+#define FC_PRES1 5.0f
+#define FC_PRES2 4.0f
+#define FC_VOLT 20.0f
 
 void startup_thread(void const *args){
 
@@ -31,17 +32,23 @@ void startup_thread(void const *args){
   {
     Thread::wait(50);
   }
+  set_indicator_leds(1<<0);
   // Open Supply Valve to let Hydrogen in
   supply_valve(1);
 
+
   // Wait for pressure and voltage to reach the required level
-  while((get_fcpres() < FC_PRES1) && (get_fcvolt() < FC_VOLT))
+  while((get_fcpres() < FC_PRES1))
+  {
+    Thread::wait(10);
+  }
+  while(get_fcvolt() < FC_VOLT)
   {
     Thread::wait(10);
   }
 
   // Close resistor relay to allow current draw
-  charge_relay(1);
+  start_relay(1);
   // open purge vale
   purge_valve(1);
 
@@ -52,7 +59,7 @@ void startup_thread(void const *args){
   start_relay(0);
   purge_valve(0);
 
-  Thread::wait(200); //delay for relay to fully close
+  Thread::wait(500); //delay for relay to fully close
 
   //wait for pressure to recover
   while((get_fcpres() < FC_PRES2))
@@ -64,6 +71,6 @@ void startup_thread(void const *args){
 
   while(1)
   {
-    Thread::wait(1000);
+    Thread::wait(2000);
   }
 }
