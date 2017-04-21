@@ -18,12 +18,16 @@ void data_logging_thread(void const *args)
 {
   Thread::wait(500);
   deltatimer.start();
+  ol_serial.printf("\r\n");
   ol_serial.printf("time,");
   ol_serial.printf("deltat,");
   ol_serial.printf("fc_status,");
   ol_serial.printf("fc_error,");
   ol_serial.printf("ExternalTemp,");
   ol_serial.printf("ExternalHumidity,");
+  ol_serial.printf("fc_temp,");
+  ol_serial.printf("temp_raw,");
+  ol_serial.printf("fan_speed,");
   ol_serial.printf("CapVolt,");
   ol_serial.printf("FCVolt,");
   ol_serial.printf("CapCurr,");
@@ -54,6 +58,9 @@ void data_logging_thread(void const *args)
     ol_serial.printf("%d,",get_error_state());
     ol_serial.printf("%f,",sht31_readTemperature());
     ol_serial.printf("%f,",sht31_readHumidity());
+    ol_serial.printf("%f,",get_fctemp());
+    ol_serial.printf("%d,",get_temp_raw());
+    ol_serial.printf("%d,",get_fan_speed());
     ol_serial.printf("%f,",get_capvolt());
     ol_serial.printf("%f,",get_fcvolt());
     ol_serial.printf("%f,",get_capcurr());

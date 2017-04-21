@@ -16,63 +16,52 @@
 #include "multiplexor.h"
 #include "digital_io.h"
 
-//USBSerial serial;
 DigitalOut status_led(STATUS_LED);
 
-char * datetime; //pointer to array for storing date/time
-
 int main() {
-    Thread::wait(2000);
+  fcc_relay(0);
+  motor_relay(0);
+  cap_relay(0);
+  start_relay(0);
+  charge_relay(0);
+  supply_valve(0);
+  purge_valve(0);
 
-    set_fc_status(IDLE_STATE);
+  Thread::wait(2000);
 
-    Thread analog_read_t(analog_read_thread,NULL,osPriorityNormal,256*4);
-    Thread::wait(1000);
+  set_fc_status(IDLE_STATE);
 
-    Thread error_checking_t(error_checking_thread,NULL,osPriorityNormal,256*4);
-    Thread::wait(1000);
+  Thread analog_read_t(analog_read_thread,NULL,osPriorityNormal,256*4);
+  Thread::wait(1000);
 
-    Thread data_logging_t(data_logging_thread,NULL,osPriorityNormal,256*4);
-    Thread sht31_readtemphum_t(sht31_readtemphum_thread,NULL,osPriorityNormal,256*4);
-    Thread set_indicator_leds_t(set_indicator_leds_thread,NULL,osPriorityNormal,256*4);
-    //Thread fan_control_board_t(fan_control_board_thread,NULL,osPriorityNormal,256*4);
-    Thread data_link_t(data_link_thread,NULL,osPriorityNormal,256*4);
-    Thread ds3231_t(ds3231_thread,NULL,osPriorityNormal,256*4);
-    Thread motor_command_t(motor_command_thread,NULL,osPriorityNormal,256*4);
+  Thread error_checking_t(error_checking_thread,NULL,osPriorityNormal,256*4);
+  Thread::wait(1000);
 
-   Thread startup_t(startup_thread,NULL,osPriorityNormal,256*4);
-   Thread charge_t(charge_thread,NULL,osPriorityNormal,256*4);
-   Thread run_t(run_thread,NULL,osPriorityNormal,256*4);
-   Thread shutdown_t(shutdown_thread,NULL,osPriorityNormal,256*4);
+  Thread data_logging_t(data_logging_thread,NULL,osPriorityNormal,256*4);
+  Thread sht31_readtemphum_t(sht31_readtemphum_thread,NULL,osPriorityNormal,256*4);
+  Thread set_indicator_leds_t(set_indicator_leds_thread,NULL,osPriorityNormal,256*4);
+  Thread fan_control_board_t(fan_control_board_thread,NULL,osPriorityNormal,256*4);
 
-    fcc_relay(1);
+  Thread data_link_t(data_link_thread,NULL,osPriorityNormal,256*4);
+  Thread ds3231_t(ds3231_thread,NULL,osPriorityNormal,256*4);
+  Thread motor_command_t(motor_command_thread,NULL,osPriorityNormal,256*4);
 
-    Thread::wait(1000);
-    set_fc_status(START_STATE);
+  Thread startup_t(startup_thread,NULL,osPriorityNormal,256*4);
+  Thread charge_t(charge_thread,NULL,osPriorityNormal,256*4);
+  Thread run_t(run_thread,NULL,osPriorityNormal,256*4);
+  Thread shutdown_t(shutdown_thread,NULL,osPriorityNormal,256*4);
+  fcc_relay(1);
 
-    uint8_t count = 0;
+  Thread::wait(1000);
+  set_fc_status(START_STATE);
 
-    while (true)
-    {
-        status_led = !status_led;
+  uint8_t count = 0;
 
-        count++;
-        if(count>11)
-        {
-          count=0;
-        }
+  while (true)
+  {
+    status_led = !status_led;
+    set_fan_pwr_status(1);
 
-        // serial.printf("Hello World!\r\n");
-        //
-        // serial.printf("The time is: %s",get_time());
-        //
-        // serial.printf("\r\n");
-        // serial.printf("The Temp Outside is: %f\r\n",sht31_readTemperature());
-        // serial.printf("The Humidity Outside is: %f\r\n",sht31_readHumidity());
-        // serial.printf("Fuel Cell Status is: %d\r\n",get_fc_status());
-        // serial.printf("Fuel Cell Voltage is: %f\r\n",get_fcvolt());
-        // serial.printf("Fuel Cell Current is: %f\r\n",get_fccurr());
-        // serial.printf("H2 Status%d\r\n",read_H2_OK());
-        Thread::wait(500);
-    }
+    Thread::wait(500);
+  }
 }

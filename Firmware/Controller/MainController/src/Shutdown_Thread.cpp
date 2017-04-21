@@ -21,7 +21,6 @@ void shutdown_thread(void const *args)
 
   while(1)
   {
-    set_indicator_leds(1<<8);
     supply_valve(0);
     purge_valve(0);
     start_relay(0);
@@ -32,7 +31,7 @@ void shutdown_thread(void const *args)
     shutdown_timer.stop();
     if(shutdown_timer.read()>3)
     {
-      //fcc_relay(0);
+      fcc_relay(0);
     }
     else
     {

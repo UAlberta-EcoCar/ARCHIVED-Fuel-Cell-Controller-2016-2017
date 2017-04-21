@@ -33,6 +33,13 @@ void startup_thread(void const *args){
     Thread::wait(50);
   }
   set_indicator_leds(1<<0);
+
+  //make sure fan board is on
+  while(get_fan_speed()==0)
+  {
+    Thread::wait(10);
+  }
+
   // Open Supply Valve to let Hydrogen in
   supply_valve(1);
 
@@ -46,6 +53,8 @@ void startup_thread(void const *args){
   {
     Thread::wait(10);
   }
+
+  Thread::wait(1000);
 
   // Close resistor relay to allow current draw
   start_relay(1);

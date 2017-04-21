@@ -2,6 +2,7 @@
 #include "digital_io.h"
 #include "Pin_Defines.h"
 #include "analog_read_thread.h"
+#include "fc_status.h"
 
 //functions for accessing digital io functions from other locations
 
@@ -20,7 +21,14 @@ bool get_supply_valve()
 
 void supply_valve(bool val)
 {
-  supply_v = val;
+  if(get_fc_status()!=STOP_STATE)
+  {
+    supply_v = val;
+  }
+  else
+  {
+    supply_v = 0;
+  }
 }
 
 bool get_purge_valve()
@@ -30,7 +38,14 @@ bool get_purge_valve()
 
 void purge_valve(bool val)
 {
-  purge_v = val;
+  if(get_fc_status()!=STOP_STATE)
+  {
+    purge_v = val;
+  }
+  else
+  {
+    purge_v = 0;
+  }
 }
 
 bool get_start_relay()
@@ -40,12 +55,19 @@ bool get_start_relay()
 
 void start_relay(bool val)
 {
-  if(charge_r == 0)
+  if(get_fc_status()!=STOP_STATE)
   {
-    if(cap_r == 0)
+    if(charge_r == 0)
     {
-      start_r = val;
+      if(cap_r == 0)
+      {
+        start_r = val;
+      }
     }
+  }
+  else
+  {
+    start_r = 0;
   }
 }
 
@@ -56,7 +78,14 @@ bool get_motor_relay()
 
 void motor_relay(bool val)
 {
-  motor_r = val;
+  if(get_fc_status()!=STOP_STATE)
+  {
+    motor_r = val;
+  }
+  else
+  {
+    motor_r = 0;
+  }
 }
 
 bool get_charge_relay()
@@ -66,12 +95,19 @@ bool get_charge_relay()
 
 void charge_relay(bool val)
 {
-  if(start_r == 0)
+  if(get_fc_status()!=0)
   {
-    if(cap_r == 0)
+    if(start_r == 0)
     {
-      charge_r = val;
+      if(cap_r == 0)
+      {
+        charge_r = val;
+      }
     }
+  }
+  else
+  {
+    charge_r = 0;
   }
 }
 
@@ -82,15 +118,22 @@ bool get_cap_relay()
 
 void cap_relay(bool val)
 {
-  if(start_r == 0)
+  if(get_fc_status()!=STOP_STATE)
   {
-    if(charge_r == 0)
+    if(start_r == 0)
     {
-      if(get_capvolt()>19.0f)
+      if(charge_r == 0)
       {
-        cap_r = val;
+        if(get_capvolt()>19.0f)
+        {
+          cap_r = val;
+        }
       }
     }
+  }
+  else
+  {
+    cap_r = 0;
   }
 }
 

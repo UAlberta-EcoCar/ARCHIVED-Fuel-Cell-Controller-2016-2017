@@ -3,6 +3,7 @@
 
 #include "i2c_threads.h"
 #include "Adafruit_SHT31.h"
+#include "ThermistorLookup.h"
 
 I2C i2c(I2C_SDA,I2C_SCL);
 
@@ -61,11 +62,10 @@ void fan_control_board_thread(void const *args)
 {
   while(true)
   {
-
     i2c.write(FAN_CONTROL_BOARD_ADDRESS<<1,fan_pwr_status,1);
     Thread::wait(50);
     i2c.read(FAN_CONTROL_BOARD_ADDRESS<<1,fctemp,3);
-
+    Thread::wait(150);
   }
 }
 void set_fan_pwr_status(char val)
@@ -74,7 +74,15 @@ void set_fan_pwr_status(char val)
 }
 float get_fctemp(void)
 {
-  return((fctemp[0]+fctemp[1])/2.0);
+  return(therm_lookup(((float)(fctemp[0]*4)+(float)fctemp[1])/1023.0f));
+}
+char get_fan_speed(void)
+{
+  return(fctemp[2]);
+}
+char get_temp_raw(void)
+{
+  return(fctemp[0]*4+fctemp[1]);
 }
 bool get_fan_status(void)
 {
