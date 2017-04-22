@@ -54,8 +54,10 @@ void analog_read_thread(void const *args)
     capcurr_v = capcurr;
     fcpres_v = 5.0f;//fcpres;
 
+    t.stop();
     float dt = t.read();
     t.reset();
+    t.start();
 
     //integration of data
     fc_coulumbs_v += fccurr_v*dt;

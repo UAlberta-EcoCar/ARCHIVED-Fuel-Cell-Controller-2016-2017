@@ -9,7 +9,11 @@
 #include "i2c_threads.h"
 #include "digital_io.h"
 
-float purge_count;
+int purge_count;
+int get_purge_count(void)
+{
+  return(purge_count);
+}
 float coulumb_count_at_last_purge;
 
 void run_thread(void const *args)
@@ -33,7 +37,7 @@ void run_thread(void const *args)
       Thread::wait(1000);
     }
 
-    if(get_fc_coulumbs()-coulumb_count_at_last_purge>2300.0f)
+    if((get_fc_coulumbs()-coulumb_count_at_last_purge)>2300.0f)
     {
       purge_valve(1);
       Thread::wait(200);

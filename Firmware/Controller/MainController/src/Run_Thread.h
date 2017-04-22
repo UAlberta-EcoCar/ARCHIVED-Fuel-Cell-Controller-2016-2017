@@ -7,5 +7,6 @@
 #define VOLTAGE_THRESHOLD 35.0f
 
 void run_thread(void const *args);
+int get_purge_count(void);
 
 #endif

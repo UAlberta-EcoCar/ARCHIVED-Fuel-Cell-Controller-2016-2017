@@ -64,9 +64,9 @@ void loop() {
 
   pwr = (int)p + (int)i;
 
-  if(pwr <= 200)
+  if(pwr <= 10)
   {
-    pwr = 200;
+    pwr = 10;
   }
   if(pwr > 255)
   {

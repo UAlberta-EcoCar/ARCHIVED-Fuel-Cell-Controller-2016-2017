@@ -9,6 +9,7 @@
 #include "error_checking_thread.h"
 #include "multiplexor.h"
 #include "digital_io.h"
+#include "Run_Thread.h"
 
 Serial ol_serial(OL_TX,OL_RX,115200);
 
@@ -44,7 +45,8 @@ void data_logging_thread(void const *args)
   ol_serial.printf("Cap_Relay,");
   ol_serial.printf("Charge_Relay,");
   ol_serial.printf("Start_Relay,");
-  ol_serial.printf("fcc_relay");
+  ol_serial.printf("fcc_relay,");
+  ol_serial.printf("purge_count");
   ol_serial.printf("\r\n");
   Thread::wait(100);
   while(true)
@@ -77,8 +79,9 @@ void data_logging_thread(void const *args)
     ol_serial.printf("%d,",get_cap_relay());
     ol_serial.printf("%d,",get_charge_relay());
     ol_serial.printf("%d,",get_start_relay());
-    ol_serial.printf("%d",get_fcc_relay());
+    ol_serial.printf("%d,",get_fcc_relay());
+    ol_serial.printf("%d",get_purge_count());
     ol_serial.printf("\r\n");
-    Thread::wait(200);
+    Thread::wait(250);
   }
 }
