@@ -49,18 +49,18 @@ void error_checking_thread(void const *args)
     }
 
     //low pressure is on a timer
-    if(get_fcpres()>4)
-    {
-      //reset Timer
-      low_pres_timer.reset();
-    }
-    else
-    {
-      if(low_pres_timer.read()>5)
-      {
-        error_state|=(1<<UNDER_PRES);
-      }
-    }
+    // if(get_fcpres()>4)
+    // {
+    //   //reset Timer
+    //   low_pres_timer.reset();
+    // }
+    // else
+    // {
+    //   if(low_pres_timer.read()>5)
+    //   {
+    //     error_state|=(1<<UNDER_PRES);
+    //   }
+    // }
 
     //high temp is also on a timer
     if(get_fctemp()<60)

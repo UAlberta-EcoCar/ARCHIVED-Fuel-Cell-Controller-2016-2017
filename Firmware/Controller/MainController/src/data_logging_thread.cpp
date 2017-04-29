@@ -82,6 +82,6 @@ void data_logging_thread(void const *args)
     ol_serial.printf("%d,",get_fcc_relay());
     ol_serial.printf("%d",get_purge_count());
     ol_serial.printf("\r\n");
-    Thread::wait(250);
+    Thread::wait(500);
   }
 }

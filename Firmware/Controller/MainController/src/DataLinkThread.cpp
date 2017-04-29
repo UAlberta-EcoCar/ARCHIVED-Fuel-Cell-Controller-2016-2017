@@ -24,13 +24,13 @@ void data_link_thread(void const *args)
     link_serial.printf(",\"fc_voltage\":");
     link_serial.printf("%f",get_fcvolt());
     link_serial.printf(",\"motor_current\":");
-    link_serial.printf("%f",get_fccurr());
+    link_serial.printf("%d",get_fan_speed());//"%f",get_fccurr());
     link_serial.printf(",\"fc_alarm_code\":");
     link_serial.printf("%d",get_error_state());
     link_serial.printf(",\"fc_state\":");
     link_serial.printf("%d",get_fc_status());
     link_serial.printf(",\"fc_temp\":");
-    link_serial.printf("%f",get_capvolt());
+    link_serial.printf("%d",(int)get_fctemp());
     link_serial.printf(",\"efficiency\":");
     link_serial.printf("%d",get_purge_count());
     link_serial.printf("}\n");

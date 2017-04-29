@@ -45,7 +45,7 @@ void startup_thread(void const *args){
 
 
   // Wait for pressure and voltage to reach the required level
-  while((get_fcpres() < FC_PRES1))
+  while(0)//(get_fcpres() < FC_PRES1))
   {
     Thread::wait(10);
   }
@@ -71,7 +71,7 @@ void startup_thread(void const *args){
   Thread::wait(500); //delay for relay to fully close
 
   //wait for pressure to recover
-  while((get_fcpres() < FC_PRES2))
+  while(0)//(get_fcpres() < FC_PRES2))
   {
     Thread::wait(10);
   }
