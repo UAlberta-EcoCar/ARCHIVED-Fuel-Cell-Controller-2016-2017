@@ -30,7 +30,7 @@ int pwr;
 float i = 0;
 long timer = 0;
 
-float setpoint = 32.0f;
+float setpoint = 35.0f;
 
 void loop() {
   digitalWrite(MOS_3,HIGH);

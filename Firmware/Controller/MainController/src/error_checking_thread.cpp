@@ -63,7 +63,7 @@ void error_checking_thread(void const *args)
     // }
 
     //high temp is also on a timer
-    if(get_fctemp()<60)
+    if(0)//get_fctemp()<60)
     {
       //reset timer
       high_temp_timer.reset();

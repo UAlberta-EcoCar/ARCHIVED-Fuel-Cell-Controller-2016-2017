@@ -35,6 +35,6 @@ void data_link_thread(void const *args)
     link_serial.printf("%d",get_purge_count());
     link_serial.printf("}\n");
 
-    Thread::wait(1000);
+    Thread::wait(2000);
   }
 }
