@@ -4,43 +4,43 @@
 #include "mbed.h"
 
 //LED
-#define STATUS_LED PTC5
+#define STATUS_LED PB_14
 
 //Valves
-#define SUPPLY_V PTD4
-#define PURGE_V PTC3
-#define EXTRA_V PTC4
+#define SUPPLY_V PA_5
+#define PURGE_V PA_6
+#define EXTRA_V PA_7
 
 //relays
-#define CAP_R PTC6
-#define CHARGE_R PTC7
-#define FCC_R PTD5
-#define START_R PTD6
-#define MOTOR_R PTC1
+#define CAP_R PD_14
+#define CHARGE_R PD_15
+#define FCC_R PF_12
+#define START_R PF_13
+#define MOTOR_R PE_9
 
 //analog voltage readings
-#define CAPVOLT PTD1
-#define FCCURR PTC0
-#define FCVOLT PTB0
-#define CAPCURR PTB1
-#define FCPRES PTC11//A11 is not defined for some reason will have to tie it to A19 which is near by
+#define CAPVOLT PC_0
+#define FCCURR PC_3
+#define FCVOLT PF_3
+#define CAPCURR PF_5
+#define FCPRES PF_10
 
 //Multiplexor pins
-#define MULTO2 PTD0
-#define MULTA PTA12
-#define MULTB PTA13
-#define MULTO1 PTD7
+#define MULTO2 PF_15
+#define MULTA PE_13
+#define MULTB PF_14
+#define MULTO1 PE_11
 
 //Serial
 //data link
-#define LINK_RX PTB16//Rx0
-#define LINK_TX PTB17//Tx0
+#define LINK_RX PE_7//Rx7
+#define LINK_TX PE_8//Tx7
 //open log
-#define OL_RX PTD2//RX2
-#define OL_TX PTD3//TX2
+#define OL_RX PB_11//Rx3
+#define OL_TX PB_10//Tx3
 
 //I2C
-#define I2C_SDA PTB3
-#define I2C_SCL PTB2
+#define I2C_SDA PD_13 //I2C4_SDA
+#define I2C_SCL PD_12 //I2C4_SCL
 
 #endif

@@ -2,9 +2,9 @@
 #include <rtos.h>
 
 
-DigitalOut led1(PTC5);
-DigitalOut led2(PTD1);
-DigitalOut led3(PTC7);
+DigitalOut led1(PB_0);
+DigitalOut led2(PB_7);
+DigitalOut led3(PB_14);
 
 void led2_thread(void const *args) {
     while (true) {
@@ -21,8 +21,8 @@ void led3_thread(void const *args){
 }
 
 int main() {
-    //Thread led2_t(led2_thread,NULL,osPriorityNormal,256*4);
-    //Thread led3_t(led3_thread,NULL,osPriorityNormal,256*4);
+    Thread led2_t(led2_thread,NULL,osPriorityNormal,256*4);
+    Thread led3_t(led3_thread,NULL,osPriorityNormal,256*4);
 
     while (true) {
         led1 = !led1;
