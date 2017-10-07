@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="8.3.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -6278,7 +6279,6 @@ Source: ENG_CD_1445055_A.pdf</description>
 <part name="P+12" library="supply1" deviceset="+12V" device=""/>
 <part name="GND27" library="supply1" deviceset="GND" device=""/>
 <part name="R11" library="SparkFun-Resistors" deviceset="RESISTOR" device="0603-RES" value="100k"/>
-<part name="R12" library="SparkFun-Resistors" deviceset="RESISTOR" device="0603-RES" value="100k"/>
 <part name="C3" library="adafruit" deviceset="C-US" device="C0603"/>
 <part name="C4" library="adafruit" deviceset="C-US" device="C0603"/>
 <part name="C5" library="adafruit" deviceset="C-US" device="C0603"/>
@@ -6328,7 +6328,6 @@ Source: ENG_CD_1445055_A.pdf</description>
 <instance part="P+12" gate="1" x="193.04" y="62.23"/>
 <instance part="GND27" gate="1" x="193.04" y="44.45"/>
 <instance part="R11" gate="G$1" x="180.34" y="152.4"/>
-<instance part="R12" gate="G$1" x="180.34" y="149.86"/>
 <instance part="C3" gate="G$1" x="261.62" y="175.26"/>
 <instance part="C4" gate="G$1" x="254" y="175.26"/>
 <instance part="C5" gate="G$1" x="246.38" y="175.26"/>
@@ -6547,16 +6546,9 @@ Source: ENG_CD_1445055_A.pdf</description>
 <pinref part="GND27" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="104.14" y1="17.78" x2="96.52" y2="17.78" width="0.1524" layer="91"/>
-<label x="93.98" y="17.78" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="R11" gate="G$1" pin="2"/>
 <wire x1="185.42" y1="152.4" x2="187.96" y2="152.4" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R12" gate="G$1" pin="2"/>
-<wire x1="185.42" y1="149.86" x2="187.96" y2="149.86" width="0.1524" layer="91"/>
+<label x="185.42" y="152.4" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="ETH1" gate="G$1" pin="5"/>
@@ -6580,6 +6572,16 @@ Source: ENG_CD_1445055_A.pdf</description>
 <wire x1="254" y1="170.18" x2="261.62" y2="170.18" width="0.1524" layer="91"/>
 <junction x="254" y="170.18"/>
 <label x="238.76" y="167.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="ETH1" gate="G$1" pin="SHD1"/>
+<wire x1="101.6" y1="20.32" x2="99.06" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="20.32" x2="99.06" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="ETH1" gate="G$1" pin="SHD2"/>
+<wire x1="99.06" y1="17.78" x2="101.6" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="17.78" x2="96.52" y2="17.78" width="0.1524" layer="91"/>
+<junction x="99.06" y="17.78"/>
+<label x="91.44" y="17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -6757,41 +6759,6 @@ Source: ENG_CD_1445055_A.pdf</description>
 <label x="142.24" y="160.02" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$16" class="0">
-<segment>
-<pinref part="ETH1" gate="G$1" pin="3"/>
-<wire x1="101.6" y1="45.72" x2="96.52" y2="45.72" width="0.1524" layer="91"/>
-<label x="93.98" y="45.72" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$22" class="0">
-<segment>
-<pinref part="ETH1" gate="G$1" pin="LED1P"/>
-<wire x1="101.6" y1="30.48" x2="96.52" y2="30.48" width="0.1524" layer="91"/>
-<label x="93.98" y="30.48" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$23" class="0">
-<segment>
-<pinref part="ETH1" gate="G$1" pin="LED1N"/>
-<wire x1="101.6" y1="27.94" x2="96.52" y2="27.94" width="0.1524" layer="91"/>
-<label x="93.98" y="27.94" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$24" class="0">
-<segment>
-<pinref part="ETH1" gate="G$1" pin="LED2P"/>
-<wire x1="101.6" y1="25.4" x2="96.52" y2="25.4" width="0.1524" layer="91"/>
-<label x="93.98" y="25.4" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$25" class="0">
-<segment>
-<pinref part="ETH1" gate="G$1" pin="LED2N"/>
-<wire x1="101.6" y1="22.86" x2="96.52" y2="22.86" width="0.1524" layer="91"/>
-<label x="93.98" y="22.86" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="RXD" class="0">
 <segment>
 <pinref part="U1" gate="U$1" pin="PD0(RXD)"/>
@@ -6814,14 +6781,6 @@ Source: ENG_CD_1445055_A.pdf</description>
 <pinref part="JP6" gate="G$1" pin="TXO"/>
 <wire x1="234.95" y1="80.01" x2="229.87" y2="80.01" width="0.1524" layer="91"/>
 <label x="229.87" y="80.01" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="H2OUT_2" class="0">
-<segment>
-<pinref part="U1" gate="U$1" pin="PC5(ADC5/SCL)"/>
-<wire x1="142.24" y1="149.86" x2="175.26" y2="149.86" width="0.1524" layer="91"/>
-<label x="167.64" y="149.86" size="1.778" layer="95"/>
-<pinref part="R12" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="ESTOP1" class="0">
@@ -6872,13 +6831,6 @@ Source: ENG_CD_1445055_A.pdf</description>
 <pinref part="ETH1" gate="G$1" pin="6"/>
 <wire x1="101.6" y1="38.1" x2="96.52" y2="38.1" width="0.1524" layer="91"/>
 <label x="93.98" y="38.1" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="ETH1" gate="G$1" pin="SHD1"/>
-<pinref part="ETH1" gate="G$1" pin="SHD2"/>
-<wire x1="101.6" y1="20.32" x2="101.6" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
