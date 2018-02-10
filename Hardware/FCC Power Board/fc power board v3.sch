@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.1.0">
+<eagle version="8.6.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -6133,17 +6134,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="-8.636" y1="10.16" x2="8.636" y2="10.16" width="0.127" layer="21"/>
 <wire x1="8.636" y1="10.16" x2="8.636" y2="-4.572" width="0.127" layer="21"/>
 </package>
-<package name="43650-0200">
-<wire x1="-4.825" y1="-8.92" x2="4.825" y2="-8.92" width="0.127" layer="21"/>
-<wire x1="-4.825" y1="0.98" x2="4.825" y2="0.98" width="0.127" layer="21"/>
-<wire x1="-4.825" y1="-8.92" x2="-4.825" y2="0.98" width="0.127" layer="21"/>
-<wire x1="4.825" y1="-8.92" x2="4.825" y2="0.98" width="0.127" layer="21"/>
-<pad name="P$1" x="-1.5" y="0" drill="1.2" diameter="1.9304" shape="square"/>
-<pad name="P$2" x="1.5" y="0" drill="1.2" diameter="1.9304" shape="square"/>
-<text x="-4.5" y="4.5" size="1.27" layer="25">&gt;Name</text>
-<text x="-4.5" y="3" size="1.27" layer="27">&gt;Value</text>
-<hole x="0" y="-4.32" drill="3"/>
-</package>
 <package name="MBR360GOS">
 <pad name="P$1" x="0" y="0" drill="1.5"/>
 <pad name="P$2" x="25" y="0" drill="1.5"/>
@@ -6172,16 +6162,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="5.08" y1="0" x2="-5.08" y2="0" width="0.254" layer="94"/>
 <text x="-2.54" y="0" size="1.27" layer="94">FUSE</text>
 </symbol>
-<symbol name="43650-0200">
-<wire x1="0" y1="5.08" x2="0" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
-<wire x1="7.62" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
-<pin name="P$1" x="-5.08" y="2.54" visible="pin" length="middle"/>
-<pin name="P$2" x="-5.08" y="-2.54" visible="pin" length="middle"/>
-<text x="0" y="10.16" size="1.27" layer="95">&gt;Name</text>
-<text x="0" y="7.62" size="1.27" layer="96">&gt;Value</text>
-</symbol>
 <symbol name="MBR360GOS">
 <pin name="P$1" x="-10.16" y="2.54" length="middle"/>
 <pin name="P$2" x="10.16" y="2.54" length="middle" rot="R180"/>
@@ -6205,22 +6185,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <connects>
 <connect gate="G$1" pin="IN" pad="IN"/>
 <connect gate="G$1" pin="OUT" pad="OUT"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="43650-0200">
-<gates>
-<gate name="G$1" symbol="43650-0200" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="43650-0200">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$2"/>
-<connect gate="G$1" pin="P$2" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -10431,6 +10395,56 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="TE 2-pin connector">
+<packages>
+<package name="2_PIN_CONNECT">
+<hole x="0" y="5.33" drill="4"/>
+<pad name="V/SIG" x="-3.34" y="12.67" drill="1.4" shape="square"/>
+<pad name="G/LOW" x="3.34" y="12.67" drill="1.4" shape="square"/>
+<wire x1="-6.35" y1="0" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="6.35" y2="0" width="0.127" layer="21"/>
+<wire x1="-6.35" y1="0" x2="-6.35" y2="15.24" width="0.127" layer="21"/>
+<wire x1="-6.35" y1="15.24" x2="6.35" y2="15.24" width="0.127" layer="21"/>
+<wire x1="6.35" y1="15.24" x2="6.35" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="2.54" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="-1.27" y2="1.27" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="1.27" y2="1.27" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="2PIN_CONNECTOR">
+<wire x1="0" y1="5.08" x2="0" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-7.62" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-2.54" x2="-5.08" y2="-2.54" width="0.254" layer="94"/>
+<pin name="G/LOW" x="-5.08" y="2.54" length="middle" rot="R180"/>
+<pin name="V/SIG" x="-5.08" y="-2.54" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="2_PIN_TECONNECTOR">
+<description>2-pin connector for high power connections on board</description>
+<gates>
+<gate name="G$1" symbol="2PIN_CONNECTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="2_PIN_CONNECT">
+<connects>
+<connect gate="G$1" pin="G/LOW" pad="G/LOW"/>
+<connect gate="G$1" pin="V/SIG" pad="V/SIG"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -10456,7 +10470,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C28" library="resistor" deviceset="C-US" device="C0805" value="3.3uF"/>
 <part name="PE36" library="supply1" deviceset="GND" device=""/>
 <part name="PE37" library="supply1" deviceset="GND" device=""/>
-<part name="BATTER_IN" library="Shell2013" deviceset="43650-0200" device="" value=""/>
 <part name="FC_12" library="SparkFun" deviceset="LED" device="1206"/>
 <part name="PE15" library="supply1" deviceset="GND" device=""/>
 <part name="R17" library="resistor" deviceset="R-US_" device="R0805" value="500"/>
@@ -10499,6 +10512,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="PE3" library="supply1" deviceset="GND" device=""/>
 <part name="PE4" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device=""/>
+<part name="U$9" library="TE 2-pin connector" deviceset="2_PIN_TECONNECTOR" device=""/>
+<part name="OUT_3" library="5555140-6 RJ11" deviceset="5555140-6" device="" value=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10527,7 +10542,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="C28" gate="G$1" x="83.82" y="-27.94"/>
 <instance part="PE36" gate="1" x="76.2" y="-38.1"/>
 <instance part="PE37" gate="1" x="83.82" y="-38.1"/>
-<instance part="BATTER_IN" gate="G$1" x="-91.44" y="2.54" rot="R90"/>
 <instance part="FC_12" gate="G$1" x="83.82" y="35.56"/>
 <instance part="PE15" gate="1" x="83.82" y="25.4"/>
 <instance part="R17" gate="G$1" x="83.82" y="45.72" rot="R90"/>
@@ -10570,6 +10584,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="PE3" gate="1" x="-5.08" y="-104.14"/>
 <instance part="PE4" gate="1" x="-114.3" y="-106.68"/>
 <instance part="JP1" gate="G$1" x="30.48" y="45.72" rot="R90"/>
+<instance part="U$9" gate="G$1" x="-91.44" y="7.62" rot="R90"/>
+<instance part="OUT_3" gate="G$1" x="-132.08" y="-53.34" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -10656,6 +10672,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-124.46" y1="81.28" x2="-121.92" y2="81.28" width="0.1524" layer="91"/>
 <label x="-121.92" y="81.28" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="OUT_3" gate="G$1" pin="1"/>
+<wire x1="-124.46" y1="-66.04" x2="-121.92" y2="-66.04" width="0.1524" layer="91"/>
+<label x="-121.92" y="-66.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="OUT_3" gate="G$1" pin="2"/>
+<wire x1="-124.46" y1="-60.96" x2="-121.92" y2="-60.96" width="0.1524" layer="91"/>
+<label x="-121.92" y="-60.96" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -10705,8 +10731,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
-<pinref part="BATTER_IN" gate="G$1" pin="P$1"/>
-<wire x1="-93.98" y1="-7.62" x2="-93.98" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="-93.98" y1="-7.62" x2="-93.98" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="U$9" gate="G$1" pin="G/LOW"/>
 </segment>
 <segment>
 <pinref part="PE2" gate="1" pin="GND"/>
@@ -10839,6 +10865,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="PE3" gate="1" pin="GND"/>
 <wire x1="-5.08" y1="-99.06" x2="-5.08" y2="-101.6" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="OUT_3" gate="G$1" pin="SH2"/>
+<wire x1="-124.46" y1="-30.48" x2="-121.92" y2="-30.48" width="0.1524" layer="91"/>
+<label x="-121.92" y="-30.48" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="OUT_3" gate="G$1" pin="SH1"/>
+<wire x1="-124.46" y1="-35.56" x2="-121.92" y2="-35.56" width="0.1524" layer="91"/>
+<label x="-121.92" y="-35.56" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="OUT_3" gate="G$1" pin="5"/>
+<wire x1="-124.46" y1="-45.72" x2="-121.92" y2="-45.72" width="0.1524" layer="91"/>
+<label x="-121.92" y="-45.72" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="OUT_3" gate="G$1" pin="6"/>
+<wire x1="-124.46" y1="-40.64" x2="-121.92" y2="-40.64" width="0.1524" layer="91"/>
+<label x="-121.92" y="-40.64" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="FC_12V" class="0">
 <segment>
@@ -10883,9 +10929,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <label x="-88.9" y="-5.08" size="1.778" layer="95"/>
 <pinref part="BATTERY_FUSE" gate="G$1" pin="IN"/>
-<wire x1="-88.9" y1="-2.54" x2="-88.9" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="2.54" x2="-88.9" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-88.9" y1="-5.08" x2="-73.66" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="BATTER_IN" gate="G$1" pin="P$2"/>
+<pinref part="U$9" gate="G$1" pin="V/SIG"/>
 </segment>
 </net>
 <net name="N$21" class="0">
@@ -11006,6 +11052,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-5.08" y1="-68.58" x2="-5.08" y2="-78.74" width="0.1524" layer="91"/>
 <junction x="-27.94" y="-68.58"/>
 <label x="-12.7" y="-68.58" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="OUT_3" gate="G$1" pin="3"/>
+<wire x1="-124.46" y1="-55.88" x2="-121.92" y2="-55.88" width="0.1524" layer="91"/>
+<label x="-121.92" y="-55.88" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="OUT_3" gate="G$1" pin="4"/>
+<wire x1="-124.46" y1="-50.8" x2="-121.92" y2="-50.8" width="0.1524" layer="91"/>
+<label x="-121.92" y="-50.8" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$5" class="0">
